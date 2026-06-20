@@ -1,0 +1,1955 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>এআই ফ্রিল্যান্সিং ব্লুপ্রিন্ট ২০২৬</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --primary: #1a237e;
+    --secondary: #0d47a1;
+    --accent: #ff6f00;
+    --accent2: #00897b;
+    --light: #e8eaf6;
+    --bg: #fafafa;
+    --text: #212121;
+    --muted: #546e7a;
+    --card: #ffffff;
+    --border: #e0e0e0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Hind Siliguri', 'Noto Sans Bengali', 'SolaimanLipi', Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.9;
+    font-size: 16px;
+  }
+
+  /* ===== COVER PAGE ===== */
+  .cover {
+    background: linear-gradient(135deg, #0d1b6e 0%, #1565c0 40%, #00695c 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+    page-break-after: always;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+
+  .cover::after {
+    content: '';
+    position: absolute;
+    bottom: -150px; left: -100px;
+    width: 500px; height: 500px;
+    background: rgba(255,111,0,0.1);
+    border-radius: 50%;
+  }
+
+  .cover-badge {
+    background: var(--accent);
+    color: white;
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    display: inline-block;
+  }
+
+  .cover h1 {
+    color: white;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+
+  .cover h1 span { color: #ffca28; }
+
+  .cover-subtitle {
+    color: rgba(255,255,255,0.85);
+    font-size: 20px;
+    margin-bottom: 50px;
+    max-width: 600px;
+  }
+
+  .cover-stats {
+    display: flex;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cover-stat {
+    text-align: center;
+    color: white;
+  }
+
+  .cover-stat .num {
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffca28;
+    display: block;
+  }
+
+  .cover-stat .label {
+    font-size: 13px;
+    color: rgba(255,255,255,0.75);
+  }
+
+  .cover-divider {
+    width: 80px;
+    height: 4px;
+    background: var(--accent);
+    margin: 30px auto;
+    border-radius: 2px;
+  }
+
+  .cover-author {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    margin-top: 50px;
+  }
+
+  /* ===== TOC PAGE ===== */
+  .toc-page {
+    padding: 60px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+    page-break-after: always;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 40px;
+  }
+
+  .section-header .icon {
+    width: 50px;
+    height: 50px;
+    background: var(--primary);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    flex-shrink: 0;
+  }
+
+  .section-header h2 {
+    font-size: 32px;
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  .toc-list { list-style: none; }
+
+  .toc-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 14px 0;
+    border-bottom: 1px dashed var(--border);
+    gap: 15px;
+  }
+
+  .toc-num {
+    background: var(--primary);
+    color: white;
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .toc-text { flex: 1; }
+  .toc-title { font-weight: 600; font-size: 16px; color: var(--text); }
+  .toc-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+  /* ===== CHAPTER PAGES ===== */
+  .chapter {
+    padding: 0;
+    page-break-before: always;
+  }
+
+  .chapter-hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    padding: 60px 80px 50px;
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .chapter-hero::after {
+    content: '';
+    position: absolute;
+    right: -60px; bottom: -60px;
+    width: 200px; height: 200px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 50%;
+  }
+
+  .chapter-num {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .chapter-hero h2 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin-bottom: 15px;
+  }
+
+  .chapter-hero p {
+    color: rgba(255,255,255,0.8);
+    font-size: 16px;
+    max-width: 600px;
+  }
+
+  .chapter-body {
+    padding: 60px 80px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ===== CONTENT ELEMENTS ===== */
+  h3 {
+    font-size: 22px;
+    color: var(--primary);
+    margin: 40px 0 16px;
+    font-weight: 700;
+    padding-left: 15px;
+    border-left: 4px solid var(--accent);
+  }
+
+  h4 {
+    font-size: 18px;
+    color: var(--secondary);
+    margin: 28px 0 12px;
+    font-weight: 600;
+  }
+
+  p {
+    margin-bottom: 16px;
+    color: #37474f;
+    line-height: 1.9;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+
+  .card-accent {
+    border-left: 5px solid var(--accent);
+  }
+
+  .card-green {
+    border-left: 5px solid var(--accent2);
+    background: #f0fdf9;
+  }
+
+  .card-blue {
+    border-left: 5px solid var(--secondary);
+    background: #eff4ff;
+  }
+
+  .card-yellow {
+    border-left: 5px solid #f9a825;
+    background: #fffde7;
+  }
+
+  .card-red {
+    border-left: 5px solid #c62828;
+    background: #fff5f5;
+  }
+
+  .card h4 { margin-top: 0; }
+
+  /* Info box */
+  .info-box {
+    background: linear-gradient(135deg, #e3f2fd, #e8eaf6);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+  }
+
+  .info-icon { font-size: 24px; flex-shrink: 0; margin-top: 2px; }
+
+  /* Tool table */
+  .tool-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 28px 0;
+    font-size: 14px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+  }
+
+  .tool-table th {
+    background: var(--primary);
+    color: white;
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+  }
+
+  .tool-table td {
+    padding: 13px 16px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+
+  .tool-table tr:nth-child(even) td { background: #f8f9ff; }
+  .tool-table tr:last-child td { border-bottom: none; }
+  .tool-table tr:hover td { background: #eef2ff; }
+
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  .badge-free { background: #c8e6c9; color: #1b5e20; }
+  .badge-paid { background: #fce4ec; color: #880e4f; }
+  .badge-freemium { background: #fff9c4; color: #f57f17; }
+
+  /* Steps */
+  .steps { list-style: none; counter-reset: step; margin: 20px 0; }
+  .step-item {
+    counter-increment: step;
+    display: flex;
+    gap: 18px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+  }
+
+  .step-item::before {
+    content: counter(step);
+    background: var(--accent);
+    color: white;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 15px;
+    flex-shrink: 0;
+  }
+
+  .step-content { padding-top: 5px; }
+  .step-title { font-weight: 600; color: var(--text); font-size: 16px; }
+  .step-desc { color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+  /* Prompt box */
+  .prompt-box {
+    background: #1a1a2e;
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    color: #e0e0e0;
+    line-height: 1.7;
+    position: relative;
+  }
+
+  .prompt-label {
+    position: absolute;
+    top: -10px;
+    left: 16px;
+    background: var(--accent);
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 12px;
+    border-radius: 10px;
+    font-family: inherit;
+    letter-spacing: 0.5px;
+  }
+
+  .prompt-box .keyword { color: #80cbc4; }
+  .prompt-box .value { color: #fff176; }
+
+  /* Grid */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 24px 0;
+  }
+
+  /* Highlight box */
+  .highlight {
+    background: linear-gradient(135deg, var(--accent), #ff8f00);
+    color: white;
+    border-radius: 12px;
+    padding: 24px 28px;
+    margin: 24px 0;
+    text-align: center;
+  }
+
+  .highlight h3 {
+    color: white;
+    border-left: none;
+    padding-left: 0;
+    font-size: 24px;
+    margin: 0 0 8px;
+  }
+
+  .highlight p { color: rgba(255,255,255,0.9); margin: 0; }
+
+  /* Day plan */
+  .day-plan {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .day-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  }
+
+  .day-card .day-num {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+
+  .day-card h4 { margin: 0 0 10px; font-size: 16px; color: var(--primary); }
+  .day-card ul { list-style: none; }
+  .day-card ul li {
+    font-size: 13px;
+    color: var(--muted);
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .day-card ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent2);
+    font-weight: 700;
+  }
+
+  /* Bullet list */
+  .custom-list { list-style: none; margin: 16px 0; }
+  .custom-list li {
+    padding: 8px 0 8px 28px;
+    position: relative;
+    color: #37474f;
+    border-bottom: 1px solid #f5f5f5;
+  }
+
+  .custom-list li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 11px;
+    top: 11px;
+  }
+
+  /* ROI table */
+  .roi-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+  }
+
+  .roi-table th {
+    background: var(--accent2);
+    color: white;
+    padding: 12px 16px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .roi-table td {
+    padding: 11px 16px;
+    border: 1px solid var(--border);
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .roi-table tr:nth-child(even) td { background: #f0fdf9; }
+
+  /* Divider */
+  .divider {
+    height: 3px;
+    background: linear-gradient(to right, var(--primary), var(--accent), transparent);
+    border: none;
+    margin: 40px 0;
+    border-radius: 2px;
+  }
+
+  /* Footer note */
+  .footer-note {
+    background: #eceff1;
+    border-radius: 10px;
+    padding: 16px 20px;
+    font-size: 13px;
+    color: var(--muted);
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  /* Prompt bank */
+  .prompt-bank-item {
+    background: #1e2a4a;
+    border-radius: 10px;
+    padding: 18px 22px;
+    margin: 16px 0;
+    color: #cfd8dc;
+    font-size: 13.5px;
+    line-height: 1.8;
+    border-left: 4px solid var(--accent);
+  }
+
+  .prompt-bank-title {
+    color: #ffca28;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .tag {
+    display: inline-block;
+    background: rgba(255,255,255,0.1);
+    color: #80cbc4;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    margin: 0 2px;
+  }
+
+  /* Earnings showcase */
+  .earnings-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin: 24px 0;
+  }
+
+  .earning-card {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid var(--border);
+    text-align: center;
+  }
+
+  .earning-card .emoji { font-size: 32px; margin-bottom: 10px; display: block; }
+  .earning-card .title { font-weight: 700; color: var(--primary); font-size: 15px; margin-bottom: 6px; }
+  .earning-card .amount { font-size: 22px; font-weight: 700; color: var(--accent); }
+  .earning-card .period { font-size: 12px; color: var(--muted); }
+
+  /* Warning box */
+  .warning {
+    background: #fff8e1;
+    border: 1px solid #ffcc02;
+    border-left: 5px solid #f9a825;
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin: 20px 0;
+    font-size: 14px;
+  }
+
+  /* Print styles */
+  @media print {
+    .cover { page-break-after: always; }
+    .toc-page { page-break-after: always; }
+    .chapter { page-break-before: always; }
+    body { font-size: 14px; }
+    .chapter-body { padding: 40px 60px; }
+    .chapter-hero { padding: 40px 60px 35px; }
+    .grid-2, .day-plan, .earnings-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== COVER ===================== -->
+<div class="cover">
+  <div class="cover-badge">📚 সম্পূর্ণ বাংলায় লেখা</div>
+  <h1>এআই ফ্রিল্যান্সিং<br><span>ব্লুপ্রিন্ট ২০২৬</span></h1>
+  <div class="cover-divider"></div>
+  <p class="cover-subtitle">এআই মডেল ব্যবহার করে শিক্ষার্থীদের অনলাইন উপার্জনের কমপ্লিট গাইড</p>
+
+  <div class="cover-stats">
+    <div class="cover-stat">
+      <span class="num">৭</span>
+      <span class="label">অধ্যায়</span>
+    </div>
+    <div class="cover-stat">
+      <span class="num">১০০+</span>
+      <span class="label">রেডিমেড প্রম্পট</span>
+    </div>
+    <div class="cover-stat">
+      <span class="num">৩০</span>
+      <span class="label">দিনের অ্যাকশন প্ল্যান</span>
+    </div>
+    <div class="cover-stat">
+      <span class="num">১৫+</span>
+      <span class="label">এআই টুলস গাইড</span>
+    </div>
+  </div>
+
+  <p class="cover-author" style="margin-top: 60px;">✦ ২০২৬ সালের সর্বশেষ তথ্য ও কৌশল সম্বলিত ✦</p>
+</div>
+
+<!-- ===================== TABLE OF CONTENTS ===================== -->
+<div class="toc-page">
+  <div class="section-header">
+    <div class="icon">📑</div>
+    <h2>বিষয়সূচি</h2>
+  </div>
+
+  <ul class="toc-list">
+    <li class="toc-item">
+      <div class="toc-num">০১</div>
+      <div class="toc-text">
+        <div class="toc-title">এআই বিপ্লব ও শিক্ষার্থীদের জন্য নতুন সুযোগ</div>
+        <div class="toc-sub">মাইন্ডসেট শিফট · বাজার পরিস্থিতি · আইনি ও নৈতিক দিক</div>
+      </div>
+    </li>
+    <li class="toc-item">
+      <div class="toc-num">০২</div>
+      <div class="toc-text">
+        <div class="toc-title">২০২৬ সালের শীর্ষস্থানীয় এআই টুলস ও কার্যপদ্ধতি</div>
+        <div class="toc-sub">টেক্সট · ইমেজ · ভিডিও · ভয়েস · কোডিং টুলস</div>
+      </div>
+    </li>
+    <li class="toc-item">
+      <div class="toc-num">০৩</div>
+      <div class="toc-text">
+        <div class="toc-title">মাস্টার প্রম্পট ইঞ্জিনিয়ারিং</div>
+        <div class="toc-sub">প্রম্পট ফ্রেমওয়ার্ক · ফর্মুলা · উদাহরণ</div>
+      </div>
+    </li>
+    <li class="toc-item">
+      <div class="toc-num">০৪</div>
+      <div class="toc-text">
+        <div class="toc-title">এআই দিয়ে উপার্জনের প্রধান ক্ষেত্রসমূহ</div>
+        <div class="toc-sub">ওয়েব ডেভ · কন্টেন্ট · ভিডিও · ডিজিটাল আর্ট</div>
+      </div>
+    </li>
+    <li class="toc-item">
+      <div class="toc-num">০৫</div>
+      <div class="toc-text">
+        <div class="toc-title">প্ল্যাটফর্ম গাইডলাইন – কোথায় কাজ পাবেন?</div>
+        <div class="toc-sub">Fiverr · Upwork · Gumroad · LinkedIn · Facebook</div>
+      </div>
+    </li>
+    <li class="toc-item">
+      <div class="toc-num">০৬</div>
+      <div class="toc-text">
+        <div class="toc-title">ফ্রি বনাম পেইড মডেল – বাজেট ম্যানেজমেন্ট</div>
+        <div class="toc-sub">বিনামূল্যে শুরু · ROI ক্যালকুলেশন · বিনিয়োগ পরিকল্পনা</div>
+      </div>
+    </li>
+    <li class="toc-item">
+      <div class="toc-num">০৭</div>
+      <div class="toc-text">
+        <div class="toc-title">৩০ দিনের অ্যাকশন প্ল্যান চ্যালেঞ্জ</div>
+        <div class="toc-sub">সপ্তাহ-ভিত্তিক লক্ষ্য · দৈনিক কার্যক্রম · মূল্যায়ন</div>
+      </div>
+    </li>
+    <li class="toc-item">
+      <div class="toc-num">★</div>
+      <div class="toc-text">
+        <div class="toc-title">বোনাস: ১০০+ রেডিমেড প্রম্পট ব্যাংক</div>
+        <div class="toc-sub">কপি করুন, ব্যবহার করুন, আয় করুন</div>
+      </div>
+    </li>
+  </ul>
+</div>
+
+<!-- ===================== CHAPTER 1 ===================== -->
+<div class="chapter">
+  <div class="chapter-hero">
+    <div class="chapter-num">অধ্যায় ০১</div>
+    <h2>🚀 এআই বিপ্লব ও ২০২৬ সালে<br>শিক্ষার্থীদের জন্য নতুন সুযোগ</h2>
+    <p>কৃত্রিম বুদ্ধিমত্তা কি চাকরি নষ্ট করছে, নাকি সৃষ্টি করছে? সত্যটা জেনে নিন।</p>
+  </div>
+
+  <div class="chapter-body">
+
+    <div class="highlight">
+      <h3>💡 মূল বার্তা</h3>
+      <p>এআই আপনার প্রতিযোগী নয় — এটি আপনার সবচেয়ে শক্তিশালী অস্ত্র। যে শিক্ষার্থী এআই ব্যবহার করতে শিখবে, সে ১০ জনের কাজ একা করতে পারবে।</p>
+    </div>
+
+    <h3>১.১ ২০২৬ সালে এআই-এর বাজার পরিস্থিতি</h3>
+
+    <p>২০২৬ সালে বিশ্বব্যাপী কৃত্রিম বুদ্ধিমত্তার বাজার ৫০০ বিলিয়ন ডলার ছাড়িয়ে গেছে। বাংলাদেশসহ বিশ্বের প্রতিটি কোণে ব্যবসাপ্রতিষ্ঠান এখন এআই-দক্ষ কর্মী খুঁজছে। কিন্তু এই দক্ষ লোকের সংখ্যা এখনও অনেক কম।</p>
+
+    <p>এই শূন্যতাই আপনার সুযোগ। একজন সাধারণ শিক্ষার্থী যদি মাত্র ৩০ দিন এআই টুলস ব্যবহারে দক্ষতা অর্জন করেন, তাহলে তিনি মাসে ২০,০০০ থেকে ১,০০,০০০+ টাকা উপার্জন করতে পারবেন — পড়াশোনার পাশাপাশি, ঘরে বসেই।</p>
+
+    <div class="grid-2">
+      <div class="card card-green">
+        <h4>✅ এআই যা করতে পারে</h4>
+        <ul class="custom-list">
+          <li>মিনিটের মধ্যে পেশাদার কন্টেন্ট লেখা</li>
+          <li>কোড লেখা ও ডিবাগিং করা</li>
+          <li>ছবি ও ভিডিও তৈরি করা</li>
+          <li>ডেটা বিশ্লেষণ করা</li>
+          <li>ভয়েস ওভার তৈরি করা</li>
+        </ul>
+      </div>
+      <div class="card card-accent">
+        <h4>🎯 আপনি যা করবেন</h4>
+        <ul class="custom-list">
+          <li>সঠিক প্রম্পট দিয়ে এআই পরিচালনা করা</li>
+          <li>ক্লায়েন্টের সাথে যোগাযোগ রাখা</li>
+          <li>আউটপুট কাস্টমাইজ ও মান নিয়ন্ত্রণ</li>
+          <li>সৃজনশীলতা যোগ করা</li>
+          <li>ব্যবসায়িক সম্পর্ক তৈরি করা</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>১.২ মাইন্ডসেট শিফট: প্রথাগত বনাম এআই-অ্যাসিস্টেড ফ্রিল্যান্সিং</h3>
+
+    <p>পুরনো পদ্ধতিতে একটি ব্লগ পোস্ট লিখতে সময় লাগত ৪-৬ ঘণ্টা। এআই দিয়ে সেটি ৩০ মিনিটে করা সম্ভব। তার মানে আপনি একই সময়ে ৮-১০ গুণ বেশি কাজ করতে পারবেন এবং আয়ও ততটাই বাড়বে।</p>
+
+    <div class="card card-blue">
+      <h4>📊 তুলনামূলক বিশ্লেষণ</h4>
+      <table class="tool-table">
+        <tr>
+          <th>বিষয়</th>
+          <th>প্রথাগত পদ্ধতি</th>
+          <th>এআই-অ্যাসিস্টেড পদ্ধতি</th>
+        </tr>
+        <tr>
+          <td>একটি আর্টিকেল লেখা</td>
+          <td>৪-৬ ঘণ্টা</td>
+          <td>৩০-৪৫ মিনিট</td>
+        </tr>
+        <tr>
+          <td>একটি লোগো ডিজাইন</td>
+          <td>৩-৫ ঘণ্টা (Photoshop)</td>
+          <td>১০-১৫ মিনিট (Midjourney)</td>
+        </tr>
+        <tr>
+          <td>একটি ল্যান্ডিং পেজ</td>
+          <td>২-৩ দিন (HTML/CSS/JS)</td>
+          <td>২-৪ ঘণ্টা (v0.dev/Cursor)</td>
+        </tr>
+        <tr>
+          <td>ভয়েস ওভার (৫ মিনিট)</td>
+          <td>স্টুডিও ভাড়া + সময়</td>
+          <td>৫ মিনিট (ElevenLabs)</td>
+        </tr>
+        <tr>
+          <td>মাসিক আয়ের সম্ভাবনা</td>
+          <td>১৫,০০০ - ৩০,০০০ টাকা</td>
+          <td>৫০,০০০ - ২,০০,০০০+ টাকা</td>
+        </tr>
+      </table>
+    </div>
+
+    <h3>১.৩ আইনি ও নৈতিক দিক</h3>
+
+    <div class="card card-yellow">
+      <h4>⚖️ যা অবশ্যই মনে রাখবেন</h4>
+      <ul class="custom-list">
+        <li><strong>কপিরাইট:</strong> এআই দিয়ে তৈরি কন্টেন্ট ব্যবহারের আগে প্ল্যাটফর্মের Terms of Service পড়ুন।</li>
+        <li><strong>ক্লায়েন্টের সাথে সততা:</strong> অনেক ক্লায়েন্ট এআই-জেনারেটেড কন্টেন্ট চান না — তাই শুরুতেই স্পষ্ট করুন।</li>
+        <li><strong>গুণমান নিশ্চিত করুন:</strong> এআই আউটপুট সবসময় যাচাই করুন, কারণ এতে ভুল তথ্য থাকতে পারে।</li>
+        <li><strong>ক্লায়েন্টের ডেটা গোপন রাখুন:</strong> কোনো সংবেদনশীল তথ্য পাবলিক এআই মডেলে দেবেন না।</li>
+        <li><strong>একাডেমিক কাজে এআই:</strong> নিজের প্রতিষ্ঠানের নীতি জেনে নিন।</li>
+      </ul>
+    </div>
+
+    <div class="info-box">
+      <div class="info-icon">💡</div>
+      <div>
+        <strong>সোনালি নিয়ম:</strong> এআই হলো আপনার সহকারী, আপনার পরিচয় নয়। প্রতিটি আউটপুটে আপনার সৃজনশীলতা ও দক্ষতার ছোঁয়া রাখুন। তাহলে আপনি হবেন অপ্রতিদ্বন্দ্বী।
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== CHAPTER 2 ===================== -->
+<div class="chapter">
+  <div class="chapter-hero" style="background: linear-gradient(135deg, #004d40 0%, #00695c 100%);">
+    <div class="chapter-num">অধ্যায় ০২</div>
+    <h2>🛠️ ২০২৬ সালের শীর্ষস্থানীয়<br>এআই টুলস ও কার্যপদ্ধতি</h2>
+    <p>কোন টুল কীসের জন্য — সম্পূর্ণ গাইড, লিংক সহ।</p>
+  </div>
+
+  <div class="chapter-body">
+
+    <p>২০২৬ সালে শত শত এআই টুল আছে। কিন্তু সবকিছু শিখতে গেলে কিছুই শেখা হবে না। এই অধ্যায়ে শুধু সেই টুলগুলো নিয়ে আলোচনা করা হয়েছে যা দিয়ে আপনি সরাসরি অর্থ উপার্জন করতে পারবেন।</p>
+
+    <h3>২.১ টেক্সট ও কন্টেন্ট এআই টুলস</h3>
+
+    <table class="tool-table">
+      <tr>
+        <th>টুল</th>
+        <th>সেরা ব্যবহার</th>
+        <th>মূল্য</th>
+        <th>লিংক</th>
+      </tr>
+      <tr>
+        <td><strong>ChatGPT (GPT-4o)</strong></td>
+        <td>কপিরাইটিং, ব্লগ, ইমেইল, স্ক্রিপ্ট লেখা</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>chatgpt.com</td>
+      </tr>
+      <tr>
+        <td><strong>Claude (Sonnet/Opus)</strong></td>
+        <td>দীর্ঘ কন্টেন্ট, কোড, পেশাদার লেখা</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>claude.ai</td>
+      </tr>
+      <tr>
+        <td><strong>Gemini Pro</strong></td>
+        <td>রিসার্চ, ডেটা অ্যানালাইসিস, একাডেমিক</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>gemini.google.com</td>
+      </tr>
+      <tr>
+        <td><strong>Jasper AI</strong></td>
+        <td>মার্কেটিং কপি, বিজ্ঞাপন লেখা</td>
+        <td><span class="badge badge-paid">পেইড</span></td>
+        <td>jasper.ai</td>
+      </tr>
+    </table>
+
+    <div class="card card-green">
+      <h4>🏆 শিক্ষার্থীদের জন্য সেরা কম্বো</h4>
+      <p><strong>Claude Sonnet</strong> দিয়ে দীর্ঘ ও পেশাদার কন্টেন্ট লিখুন। <strong>ChatGPT</strong> দিয়ে দ্রুত আইডিয়া ও শর্ট কন্টেন্ট তৈরি করুন। <strong>Gemini</strong> দিয়ে তথ্য যাচাই করুন।</p>
+    </div>
+
+    <h3>২.২ ইমেজ জেনারেশন টুলস</h3>
+
+    <table class="tool-table">
+      <tr>
+        <th>টুল</th>
+        <th>সেরা ব্যবহার</th>
+        <th>মূল্য</th>
+        <th>লিংক</th>
+      </tr>
+      <tr>
+        <td><strong>Midjourney v6</strong></td>
+        <td>আর্টওয়ার্ক, বুক কভার, টি-শার্ট</td>
+        <td><span class="badge badge-paid">পেইড ($10/মাস)</span></td>
+        <td>midjourney.com</td>
+      </tr>
+      <tr>
+        <td><strong>DALL-E 3</strong></td>
+        <td>সাধারণ ইমেজ, প্রেজেন্টেশন</td>
+        <td><span class="badge badge-freemium">ChatGPT সাথে</span></td>
+        <td>chatgpt.com</td>
+      </tr>
+      <tr>
+        <td><strong>Adobe Firefly</strong></td>
+        <td>কমার্শিয়াল-সেফ ইমেজ</td>
+        <td><span class="badge badge-freemium">ফ্রি ক্রেডিট</span></td>
+        <td>firefly.adobe.com</td>
+      </tr>
+      <tr>
+        <td><strong>Ideogram</strong></td>
+        <td>টেক্সট সহ ডিজাইন, লোগো</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>ideogram.ai</td>
+      </tr>
+      <tr>
+        <td><strong>Canva AI</strong></td>
+        <td>সোশ্যাল মিডিয়া পোস্ট, টেমপ্লেট</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>canva.com</td>
+      </tr>
+    </table>
+
+    <h3>২.৩ ভিডিও জেনারেশন ও এডিটিং</h3>
+
+    <table class="tool-table">
+      <tr>
+        <th>টুল</th>
+        <th>সেরা ব্যবহার</th>
+        <th>মূল্য</th>
+        <th>লিংক</th>
+      </tr>
+      <tr>
+        <td><strong>Runway Gen-3</strong></td>
+        <td>টেক্সট-টু-ভিডিও, শর্ট ক্লিপ</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>runwayml.com</td>
+      </tr>
+      <tr>
+        <td><strong>Kling AI</strong></td>
+        <td>রিয়েলিস্টিক ভিডিও</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>klingai.com</td>
+      </tr>
+      <tr>
+        <td><strong>CapCut</strong></td>
+        <td>ভিডিও এডিটিং, সাবটাইটেল, রিলস</td>
+        <td><span class="badge badge-free">ফ্রি</span></td>
+        <td>capcut.com</td>
+      </tr>
+      <tr>
+        <td><strong>HeyGen</strong></td>
+        <td>এআই অ্যাভাটার ভিডিও, প্রেজেন্টেশন</td>
+        <td><span class="badge badge-paid">পেইড</span></td>
+        <td>heygen.com</td>
+      </tr>
+    </table>
+
+    <h3>২.৪ ভয়েস ও অডিও টুলস</h3>
+
+    <table class="tool-table">
+      <tr>
+        <th>টুল</th>
+        <th>সেরা ব্যবহার</th>
+        <th>মূল্য</th>
+        <th>লিংক</th>
+      </tr>
+      <tr>
+        <td><strong>ElevenLabs</strong></td>
+        <td>হিউম্যান-লাইক ভয়েস, পডকাস্ট</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>elevenlabs.io</td>
+      </tr>
+      <tr>
+        <td><strong>Murf AI</strong></td>
+        <td>প্রফেশনাল ভয়েস ওভার</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>murf.ai</td>
+      </tr>
+      <tr>
+        <td><strong>Suno AI</strong></td>
+        <td>AI মিউজিক তৈরি</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>suno.com</td>
+      </tr>
+    </table>
+
+    <h3>২.৫ কোডিং ও ওয়েব ডেভেলপমেন্ট</h3>
+
+    <table class="tool-table">
+      <tr>
+        <th>টুল</th>
+        <th>সেরা ব্যবহার</th>
+        <th>মূল্য</th>
+        <th>লিংক</th>
+      </tr>
+      <tr>
+        <td><strong>Cursor AI</strong></td>
+        <td>AI কোড এডিটর, ফুলস্ট্যাক ডেভেলপমেন্ট</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>cursor.com</td>
+      </tr>
+      <tr>
+        <td><strong>v0.dev (Vercel)</strong></td>
+        <td>UI কম্পোনেন্ট, ওয়েবসাইট তৈরি</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>v0.dev</td>
+      </tr>
+      <tr>
+        <td><strong>Bolt.new</strong></td>
+        <td>সম্পূর্ণ ওয়েব অ্যাপ তৈরি</td>
+        <td><span class="badge badge-freemium">ফ্রিমিয়াম</span></td>
+        <td>bolt.new</td>
+      </tr>
+      <tr>
+        <td><strong>GitHub Copilot</strong></td>
+        <td>কোড সাজেশন, অটোকমপ্লিট</td>
+        <td><span class="badge badge-paid">$10/মাস</span></td>
+        <td>github.com/copilot</td>
+      </tr>
+    </table>
+
+    <div class="info-box">
+      <div class="info-icon">🎯</div>
+      <div>
+        <strong>শুরু করুন মাত্র ৩টি টুল দিয়ে:</strong> ChatGPT (ফ্রি) + Canva (ফ্রি) + CapCut (ফ্রি)। এই তিনটি দিয়েই আপনি সোশ্যাল মিডিয়া ম্যানেজমেন্টের কাজ পেতে পারেন।
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== CHAPTER 3 ===================== -->
+<div class="chapter">
+  <div class="chapter-hero" style="background: linear-gradient(135deg, #4a148c 0%, #7b1fa2 100%);">
+    <div class="chapter-num">অধ্যায় ০৩</div>
+    <h2>💡 মাস্টার প্রম্পট ইঞ্জিনিয়ারিং<br>The Art of Prompting</h2>
+    <p>২০২৬ সালের সবচেয়ে মূল্যবান স্কিল — সঠিক প্রম্পট লেখার কৌশল।</p>
+  </div>
+
+  <div class="chapter-body">
+
+    <div class="highlight" style="background: linear-gradient(135deg, #6a1b9a, #8e24aa);">
+      <h3>🔑 প্রম্পট কী?</h3>
+      <p>প্রম্পট হলো আপনার এআই মডেলকে দেওয়া নির্দেশনা। একটি ভালো প্রম্পট আপনাকে একটি সাধারণ আউটপুটের বদলে একটি অসাধারণ, পেশাদার আউটপুট দেবে।</p>
+    </div>
+
+    <h3>৩.১ পারফেক্ট প্রম্পট ফ্রেমওয়ার্ক: RCTCO</h3>
+
+    <div class="grid-2">
+      <div class="card card-accent">
+        <h4>R - Role (ভূমিকা)</h4>
+        <p>এআইকে একটি বিশেষজ্ঞের ভূমিকায় বসান।</p>
+        <p><em>"Act as a senior SEO copywriter with 10 years of experience..."</em></p>
+      </div>
+      <div class="card card-blue">
+        <h4>C - Context (প্রসঙ্গ)</h4>
+        <p>পটভূমি ও প্রয়োজনীয় তথ্য দিন।</p>
+        <p><em>"I need to write a blog post for a Bangladeshi e-commerce store selling sarees..."</em></p>
+      </div>
+      <div class="card card-green">
+        <h4>T - Task (কাজ)</h4>
+        <p>ঠিক কী করতে হবে তা স্পষ্টভাবে বলুন।</p>
+        <p><em>"Write a 1000-word SEO-optimized article about..."</em></p>
+      </div>
+      <div class="card card-yellow">
+        <h4>C - Constraint (সীমাবদ্ধতা)</h4>
+        <p>কী কী করা যাবে না বা কোন স্টাইল চান।</p>
+        <p><em>"Avoid technical jargon. Use simple Bangla words. Maximum 3 sentences per paragraph."</em></p>
+      </div>
+    </div>
+
+    <div class="card card-accent" style="margin-top: 0;">
+      <h4>O - Output Format (আউটপুট ফরম্যাট)</h4>
+      <p>কেমন ফরম্যাটে চান তা বলুন।</p>
+      <p><em>"Format: H1 title, introduction, 5 H2 sections with bullet points, and a conclusion with CTA."</em></p>
+    </div>
+
+    <h3>৩.২ বহুল ব্যবহৃত প্রম্পট ফর্মুলা</h3>
+
+    <h4>📝 কন্টেন্ট রাইটিং প্রম্পট</h4>
+
+    <div class="prompt-box">
+      <div class="prompt-label">PROMPT TEMPLATE</div>
+      <span class="keyword">Act as</span> an expert SEO copywriter and content strategist with 10 years of experience.<br><br>
+      <span class="keyword">Context:</span> I'm writing for [<span class="value">TARGET AUDIENCE</span>] who are interested in [<span class="value">TOPIC</span>].<br><br>
+      <span class="keyword">Task:</span> Write a [<span class="value">WORD COUNT</span>]-word, SEO-optimized blog article about "[<span class="value">TOPIC</span>]".<br><br>
+      <span class="keyword">Include:</span><br>
+      - A compelling headline with the keyword "[<span class="value">KEYWORD</span>]"<br>
+      - An engaging introduction that hooks the reader<br>
+      - 5 main sections with H2 headings<br>
+      - Bullet points where applicable<br>
+      - A conclusion with a clear Call-to-Action<br><br>
+      <span class="keyword">Tone:</span> [<span class="value">Professional / Friendly / Casual</span>]<br>
+      <span class="keyword">Avoid:</span> Passive voice, filler phrases, repetition.
+    </div>
+
+    <h4>💻 ওয়েব ডেভেলপমেন্ট প্রম্পট</h4>
+
+    <div class="prompt-box">
+      <div class="prompt-label">PROMPT TEMPLATE</div>
+      <span class="keyword">Act as</span> a Senior Full-Stack Developer specializing in React and Tailwind CSS.<br><br>
+      <span class="keyword">Task:</span> Create a [<span class="value">COMPONENT NAME</span>] component for a [<span class="value">WEBSITE TYPE</span>].<br><br>
+      <span class="keyword">Requirements:</span><br>
+      - Use React functional components with hooks<br>
+      - Style with Tailwind CSS classes only<br>
+      - Mobile-responsive design<br>
+      - Include [<span class="value">SPECIFIC FEATURES</span>]<br>
+      - Clean, commented code<br><br>
+      <span class="keyword">Output:</span> Complete, ready-to-use code. No explanations, just the code.
+    </div>
+
+    <h4>📱 সোশ্যাল মিডিয়া প্রম্পট</h4>
+
+    <div class="prompt-box">
+      <div class="prompt-label">PROMPT TEMPLATE</div>
+      <span class="keyword">Act as</span> a viral social media content creator for [<span class="value">PLATFORM</span>].<br><br>
+      <span class="keyword">Task:</span> Write [<span class="value">NUMBER</span>] engaging posts about "[<span class="value">TOPIC</span>]" for [<span class="value">BRAND NAME</span>].<br><br>
+      <span class="keyword">Each post should have:</span><br>
+      - A scroll-stopping hook in the first line<br>
+      - Value-packed content (tips/insights/stories)<br>
+      - Relevant hashtags (10-15)<br>
+      - A clear Call-to-Action<br><br>
+      <span class="keyword">Tone:</span> [<span class="value">Inspirational / Educational / Entertaining</span>]<br>
+      <span class="keyword">Target:</span> [<span class="value">AGE GROUP</span>] in Bangladesh
+    </div>
+
+    <h3>৩.৩ প্রম্পট উন্নত করার কৌশল</h3>
+
+    <ol class="steps">
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">ধাপে ধাপে বলুন (Chain of Thought)</div>
+          <div class="step-desc">জটিল কাজের জন্য বলুন: "Think step by step" — এতে এআই আরও সঠিক ও যৌক্তিক উত্তর দেয়।</div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">উদাহরণ দিন (Few-Shot Prompting)</div>
+          <div class="step-desc">আপনি কেমন ধরনের লেখা চান তার একটি উদাহরণ দিন। তাহলে এআই সেই স্টাইল অনুসরণ করবে।</div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">পুনরায় জিজ্ঞেস করুন (Iteration)</div>
+          <div class="step-desc">প্রথম আউটপুট পছন্দ না হলে বলুন: "Make it more professional" বা "Rewrite the introduction to be more engaging"।</div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">নির্দিষ্ট সংখ্যা উল্লেখ করুন</div>
+          <div class="step-desc">"Give me 5 ideas" বা "Write exactly 300 words" — নির্দিষ্টতা ভালো ফলাফল দেয়।</div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">নেতিবাচক নির্দেশনা দিন</div>
+          <div class="step-desc">"Do NOT use clichés", "Avoid using the word 'very'" — এআইকে কী করবে না তা বলুন।</div>
+        </div>
+      </li>
+    </ol>
+
+  </div>
+</div>
+
+<!-- ===================== CHAPTER 4 ===================== -->
+<div class="chapter">
+  <div class="chapter-hero" style="background: linear-gradient(135deg, #e65100 0%, #f57c00 100%);">
+    <div class="chapter-num">অধ্যায় ০৪</div>
+    <h2>💰 এআই দিয়ে উপার্জনের প্রধান<br>ক্ষেত্রসমূহ</h2>
+    <p>বাস্তব উদাহরণ ও ধাপে ধাপে গাইডলাইন সহ।</p>
+  </div>
+
+  <div class="chapter-body">
+
+    <div class="earnings-grid">
+      <div class="earning-card">
+        <span class="emoji">💻</span>
+        <div class="title">ওয়েব ডেভেলপমেন্ট</div>
+        <div class="amount">৳৫০,০০০+</div>
+        <div class="period">প্রতি প্রজেক্ট</div>
+      </div>
+      <div class="earning-card">
+        <span class="emoji">✍️</span>
+        <div class="title">কন্টেন্ট রাইটিং</div>
+        <div class="amount">৳২০,০০০+</div>
+        <div class="period">প্রতি মাস</div>
+      </div>
+      <div class="earning-card">
+        <span class="emoji">🎬</span>
+        <div class="title">ভিডিও তৈরি</div>
+        <div class="amount">৳৩০,০০০+</div>
+        <div class="period">প্রতি মাস</div>
+      </div>
+      <div class="earning-card">
+        <span class="emoji">🎨</span>
+        <div class="title">ডিজিটাল আর্ট</div>
+        <div class="amount">৳১৫,০০০+</div>
+        <div class="period">প্রতি মাস (প্যাসিভ)</div>
+      </div>
+    </div>
+
+    <h3>৪.১ এআই-অ্যাসিস্টেড ওয়েব ডেভেলপমেন্ট</h3>
+
+    <p>Cursor AI বা v0.dev ব্যবহার করে আপনি কোনো কোডিং জ্ঞান ছাড়াই পেশাদার ওয়েবসাইট তৈরি করতে পারবেন। এটি বর্তমানে সবচেয়ে বেশি চাহিদাসম্পন্ন ও লাভজনক কাজগুলোর একটি।</p>
+
+    <ol class="steps">
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">ক্লায়েন্টের প্রয়োজনীয়তা বুঝুন</div>
+          <div class="step-desc">কোন ধরনের ওয়েবসাইট চাই, কী রঙ, কী ফিচার — বিস্তারিত নোট করুন।</div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">bolt.new বা v0.dev খুলুন</div>
+          <div class="step-desc">সাইটে গিয়ে একটি নতুন প্রজেক্ট শুরু করুন। কোনো ইনস্টলেশন দরকার নেই।</div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">প্রম্পটে বিস্তারিত লিখুন</div>
+          <div class="step-desc">"Create a modern restaurant website with a hero section, menu page, contact form, and booking section. Use dark theme with golden accents."</div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">কাস্টমাইজ করুন</div>
+          <div class="step-desc">ক্লায়েন্টের লোগো, রঙ, কন্টেন্ট যোগ করুন। এআই দিয়েই পরিবর্তন করুন।</div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">Vercel বা Netlify-তে Deploy করুন</div>
+          <div class="step-desc">বিনামূল্যে হোস্টিং সহ ওয়েবসাইট লাইভ করুন এবং ক্লায়েন্টকে লিংক দিন।</div>
+        </div>
+      </li>
+    </ol>
+
+    <div class="card card-green">
+      <h4>💡 বাস্তব উদাহরণ: রেস্টুরেন্ট ওয়েবসাইট</h4>
+      <p><strong>কাজের সময়:</strong> ৩-৪ ঘণ্টা | <strong>চার্জ করুন:</strong> ৳১৫,০০০ - ৳৩০,০০০</p>
+      <p>ঢাকার একটি রেস্টুরেন্টের ওয়েবসাইট তৈরি করতে পারলে তারা খুশিমনে ৳১৫,০০০-৩০,০০০ দেবে। এবং পরবর্তী আপডেটের জন্য মাসিক ৳৩,০০০-৫,০০০ রিটেইনার পাওয়াও সম্ভব।</p>
+    </div>
+
+    <hr class="divider">
+
+    <h3>৪.২ কন্টেন্ট ক্রিয়েশন ও এসইও রাইটিং</h3>
+
+    <p>ব্লগ আর্টিকেল, প্রোডাক্ট ডেসক্রিপশন, ইমেইল নিউজলেটার — এই কাজগুলো সবচেয়ে বেশি পাওয়া যায় Upwork ও Fiverr-এ।</p>
+
+    <div class="card card-blue">
+      <h4>📋 একটি এসইও আর্টিকেলের ওয়ার্কফ্লো</h4>
+      <ol class="steps">
+        <li class="step-item">
+          <div class="step-content">
+            <div class="step-title">কীওয়ার্ড রিসার্চ (Gemini/ChatGPT দিয়ে)</div>
+            <div class="step-desc">টপিক দিন এবং ১০টি LSI কীওয়ার্ড বের করুন।</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-content">
+            <div class="step-title">আর্টিকেল আউটলাইন তৈরি (Claude দিয়ে)</div>
+            <div class="step-desc">H2, H3 স্ট্রাকচার সহ বিস্তারিত আউটলাইন।</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-content">
+            <div class="step-title">ড্রাফট লেখা (Claude/ChatGPT)</div>
+            <div class="step-desc">প্রতিটি সেকশন আলাদাভাবে লিখুন।</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-content">
+            <div class="step-title">হিউম্যানাইজ করুন</div>
+            <div class="step-desc">নিজে পড়ুন, কিছু বাক্য পরিবর্তন করুন, ব্যক্তিগত অভিজ্ঞতা যোগ করুন।</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-content">
+            <div class="step-title">Grammarly দিয়ে চেক করুন</div>
+            <div class="step-desc">ব্যাকরণ ও বানান ঠিক করুন।</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <div class="warning">
+      ⚠️ <strong>গুগল পেনাল্টি এড়ানোর কৌশল:</strong> এআই টেক্সট হুবহু ব্যবহার করবেন না। প্রতিটি প্যারাগ্রাফ নিজে একবার পড়ুন ও সামান্য পরিবর্তন করুন। ব্যক্তিগত গল্প বা অভিজ্ঞতা যোগ করুন। এতে কন্টেন্ট ১০০% ইউনিক ও হিউম্যান টাচযুক্ত হবে।
+    </div>
+
+    <hr class="divider">
+
+    <h3>৪.৩ সোশ্যাল মিডিয়া ম্যানেজমেন্ট ও শর্ট-ফর্ম ভিডিও</h3>
+
+    <p>এটি ২০২৬ সালে সবচেয়ে দ্রুত বর্ধনশীল ফ্রিল্যান্সিং ক্যাটাগরি। প্রতিটি ছোট ব্যবসা ইনস্টাগ্রাম/ফেসবুক রিলস চায় কিন্তু তৈরি করতে পারে না।</p>
+
+    <div class="card card-accent">
+      <h4>🎬 AI রিলস/শর্টস তৈরির পাইপলাইন</h4>
+      <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 10px;">
+        <div style="background: var(--primary); color: white; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;">ChatGPT<br><small>স্ক্রিপ্ট লেখা</small></div>
+        <div style="font-size: 20px; color: var(--accent);">→</div>
+        <div style="background: #4a148c; color: white; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;">ElevenLabs<br><small>ভয়েস ওভার</small></div>
+        <div style="font-size: 20px; color: var(--accent);">→</div>
+        <div style="background: #004d40; color: white; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;">Runway/Kling<br><small>ভিজ্যুয়াল</small></div>
+        <div style="font-size: 20px; color: var(--accent);">→</div>
+        <div style="background: #e65100; color: white; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;">CapCut<br><small>এডিটিং</small></div>
+        <div style="font-size: 20px; color: var(--accent);">→</div>
+        <div style="background: #880e4f; color: white; padding: 8px 16px; border-radius: 8px; font-size: 13px; font-weight: 600;">পোস্ট<br><small>& উপার্জন</small></div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card card-green">
+        <h4>💵 আয়ের উৎস ১: ক্লায়েন্ট সার্ভিস</h4>
+        <ul class="custom-list">
+          <li>মাসে ১০টি রিলস: ৳৮,০০০-১৫,০০০</li>
+          <li>সোশ্যাল মিডিয়া ম্যানেজমেন্ট: ৳১৫,০০০-৩০,০০০/মাস</li>
+          <li>একটি প্রমোশনাল ভিডিও: ৳৫,০০০-১০,০০০</li>
+        </ul>
+      </div>
+      <div class="card card-blue">
+        <h4>💵 আয়ের উৎস ২: প্যাসিভ ইনকাম</h4>
+        <ul class="custom-list">
+          <li>YouTube Monetization (১০০০ সাবস্ক্রাইবার)</li>
+          <li>Facebook Reels Bonus Program</li>
+          <li>TikTok Creator Fund</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <h3>৪.৪ ডিজিটাল আর্ট ও প্রিন্ট অন ডিমান্ড</h3>
+
+    <p>Midjourney দিয়ে ডিজাইন তৈরি করুন এবং Etsy বা Redbubble-এ বিক্রি করুন। একবার আপলোড করলে বারবার বিক্রি হয় — পুরোপুরি প্যাসিভ ইনকাম।</p>
+
+    <ol class="steps">
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">Midjourney-তে ট্রেন্ডি ডিজাইন তৈরি করুন</div>
+          <div class="step-desc">টি-শার্ট, ফোন কেস, মগ, বালিশ, পোস্টার — এসব জনপ্রিয়।</div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">Adobe Illustrator বা Vectorizer দিয়ে ভেক্টর করুন</div>
+          <div class="step-desc">vectorizer.ai দিয়ে ফ্রিতেই করা যায়।</div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">Printful বা Printify-তে আপলোড করুন</div>
+          <div class="step-desc">এরা অর্ডার পেলে নিজেরাই প্রিন্ট করে পাঠায়, আপনাকে কিছু করতে হবে না।</div>
+        </div>
+      </li>
+      <li class="step-item">
+        <div class="step-content">
+          <div class="step-title">Etsy স্টোর খুলুন</div>
+          <div class="step-desc">বিশ্বব্যাপী ক্রেতারা আপনার ডিজাইন কিনবে।</div>
+        </div>
+      </li>
+    </ol>
+
+  </div>
+</div>
+
+<!-- ===================== CHAPTER 5 ===================== -->
+<div class="chapter">
+  <div class="chapter-hero" style="background: linear-gradient(135deg, #01579b 0%, #0288d1 100%);">
+    <div class="chapter-num">অধ্যায় ০৫</div>
+    <h2>🌐 প্ল্যাটফর্ম গাইডলাইন<br>কোথায় ও কীভাবে কাজ পাবেন?</h2>
+    <p>গ্লোবাল ও লোকাল প্ল্যাটফর্মে সফল হওয়ার বিস্তারিত কৌশল।</p>
+  </div>
+
+  <div class="chapter-body">
+
+    <h3>৫.১ Fiverr — শিক্ষার্থীদের প্রথম পছন্দ</h3>
+
+    <div class="card card-green">
+      <h4>✅ Fiverr-এ AI Gig তৈরির গাইড</h4>
+      <ol class="steps">
+        <li class="step-item">
+          <div class="step-content">
+            <div class="step-title">সঠিক ক্যাটাগরি বেছে নিন</div>
+            <div class="step-desc">Writing &amp; Translation → AI Content Writing অথবা Programming → AI Apps — এ দুটো ক্যাটাগরিতে চাহিদা সবচেয়ে বেশি।</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-content">
+            <div class="step-title">Gig Title লিখুন কীওয়ার্ড দিয়ে</div>
+            <div class="step-desc">"I will write SEO-optimized AI-assisted blog articles for your website" — এভাবে লিখুন।</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-content">
+            <div class="step-title">পোর্টফোলিও স্যাম্পল যোগ করুন</div>
+            <div class="step-desc">আগেই ৩-৫টি সেরা কাজের স্যাম্পল তৈরি করে রাখুন।</div>
+          </div>
+        </li>
+        <li class="step-item">
+          <div class="step-content">
+            <div class="step-title">প্রথম ১০টি অর্ডার কম দামে নিন</div>
+            <div class="step-desc">রিভিউ পেতে শুরুতে $5-10 রাখুন। রিভিউ হলে দাম বাড়ান।</div>
+          </div>
+        </li>
+      </ol>
+    </div>
+
+    <h4>📌 জনপ্রিয় Fiverr Gig আইডিয়া (২০২৬)</h4>
+    <ul class="custom-list">
+      <li>AI-powered SEO blog articles (1000 words)</li>
+      <li>AI social media content calendar (30 posts)</li>
+      <li>AI-generated logo & brand identity pack</li>
+      <li>Landing page with AI (Bolt/v0.dev)</li>
+      <li>AI faceless YouTube Shorts (5 videos)</li>
+      <li>AI voiceover in any language (ElevenLabs)</li>
+      <li>ChatGPT prompt engineering consultation</li>
+      <li>AI product description writing (Amazon/Shopify)</li>
+    </ul>
+
+    <h3>৫.২ Upwork — বড় ও দীর্ঘমেয়াদী কাজের জন্য</h3>
+
+    <div class="card card-blue">
+      <h4>💼 Upwork Profile অপ্টিমাইজেশন</h4>
+      <ul class="custom-list">
+        <li><strong>টাইটেল:</strong> "AI-Powered Content Strategist &amp; Web Developer | Claude, GPT-4, Midjourney Expert"</li>
+        <li><strong>Overview-এর প্রথম ২ লাইন:</strong> সরাসরি ক্লায়েন্টের সমস্যা ও আপনার সমাধান উল্লেখ করুন।</li>
+        <li><strong>স্কিলস:</strong> AI Writing, Prompt Engineering, Web Development, SEO, Graphic Design যোগ করুন।</li>
+        <li><strong>পোর্টফোলিও:</strong> কমপক্ষে ৫টি কাজের স্যাম্পল (নমুনা) যোগ করুন।</li>
+        <li><strong>Proposal লেখা:</strong> প্রতিটি Proposal কাস্টমাইজ করুন — জেনেরিক Proposal কাজ পায় না।</li>
+      </ul>
+    </div>
+
+    <div class="prompt-box" style="margin-top: 10px;">
+      <div class="prompt-label">UPWORK PROPOSAL TEMPLATE</div>
+      Hi [<span class="value">Client Name</span>],<br><br>
+      I noticed you need [<span class="value">SPECIFIC REQUIREMENT FROM JOB POST</span>]. I've done exactly this for [<span class="value">SIMILAR CLIENT TYPE</span>] — and delivered [<span class="value">SPECIFIC RESULT</span>] in [<span class="value">TIMEFRAME</span>].<br><br>
+      Here's what I'll do for you:<br>
+      ✓ [<span class="value">DELIVERABLE 1</span>]<br>
+      ✓ [<span class="value">DELIVERABLE 2</span>]<br>
+      ✓ [<span class="value">DELIVERABLE 3</span>]<br><br>
+      Please see my sample work here: [<span class="value">PORTFOLIO LINK</span>]<br><br>
+      I can start immediately. Can we hop on a quick 10-minute call?<br>
+      Best, [<span class="value">YOUR NAME</span>]
+    </div>
+
+    <h3>৫.৩ প্যাসিভ ইনকাম প্ল্যাটফর্ম</h3>
+
+    <div class="grid-2">
+      <div class="card">
+        <h4>📦 Gumroad</h4>
+        <p>এআই দিয়ে তৈরি ডিজিটাল পণ্য বিক্রি করুন:</p>
+        <ul class="custom-list">
+          <li>প্রম্পট প্যাক ($5-$29)</li>
+          <li>এআই ইবুক ($9-$49)</li>
+          <li>টেমপ্লেট প্যাক ($15-$99)</li>
+          <li>মিনি কোর্স ($29-$199)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>📧 Substack / Beehiiv</h4>
+        <p>নিউজলেটার চালান:</p>
+        <ul class="custom-list">
+          <li>সাপ্তাহিক AI টিপস নিউজলেটার</li>
+          <li>ফ্রি তে শুরু, পরে পেইড করুন</li>
+          <li>১০০০ সাবস্ক্রাইবারে $500+/মাস</li>
+          <li>স্পনসরশিপ থেকেও আয়</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>৫.৪ লোকাল মার্কেটে কাজ পাওয়ার কৌশল</h3>
+
+    <div class="card card-accent">
+      <h4>🇧🇩 বাংলাদেশে ডিরেক্ট ক্লায়েন্ট খোঁজার পদ্ধতি</h4>
+      <ul class="custom-list">
+        <li><strong>LinkedIn:</strong> "SME owner Bangladesh", "Marketing Manager Dhaka" সার্চ করে কানেক্ট করুন। পোর্টফোলিও শেয়ার করুন।</li>
+        <li><strong>Facebook Groups:</strong> "বাংলাদেশ ফ্রিল্যান্সার কমিউনিটি", "Digital Marketing Bangladesh" গ্রুপে কাজের জন্য পোস্ট করুন।</li>
+        <li><strong>ঠান্ডা বার্তা (Cold DM):</strong> Instagram বা Facebook-এ ছোট ব্যবসাগুলোকে সরাসরি মেসেজ করুন, একটি ফ্রি স্যাম্পল অফার করুন।</li>
+        <li><strong>নিজের কন্টেন্ট পোস্ট করুন:</strong> LinkedIn বা Facebook-এ আপনার কাজের উদাহরণ পোস্ট করুন — ক্লায়েন্টরা নিজেই যোগাযোগ করবে।</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== CHAPTER 6 ===================== -->
+<div class="chapter">
+  <div class="chapter-hero" style="background: linear-gradient(135deg, #1b5e20 0%, #2e7d32 100%);">
+    <div class="chapter-num">অধ্যায় ০৬</div>
+    <h2>📉 ফ্রি বনাম পেইড মডেল<br>বাজেট ও রিসোর্স ম্যানেজমেন্ট</h2>
+    <p>শূন্য বাজেট থেকে শুরু করে ধীরে ধীরে বিনিয়োগ বাড়ানোর কৌশল।</p>
+  </div>
+
+  <div class="chapter-body">
+
+    <h3>৬.১ ফ্রিতে যা যা করা সম্ভব</h3>
+
+    <p>অনেকে মনে করেন ভালো এআই টুল ব্যবহার করতে টাকা লাগে। কিন্তু এটা সত্যি নয়। নিচের তালিকা দেখুন।</p>
+
+    <table class="roi-table">
+      <tr>
+        <th>টুল</th>
+        <th>ফ্রি সুবিধা</th>
+        <th>কোন কাজে লাগবে</th>
+      </tr>
+      <tr>
+        <td><strong>ChatGPT (ফ্রি)</strong></td>
+        <td>GPT-4o-mini অ্যাক্সেস</td>
+        <td>কন্টেন্ট রাইটিং, আইডিয়া</td>
+      </tr>
+      <tr>
+        <td><strong>Claude (ফ্রি)</strong></td>
+        <td>দৈনিক লিমিটেড মেসেজ</td>
+        <td>দীর্ঘ কন্টেন্ট, কোড</td>
+      </tr>
+      <tr>
+        <td><strong>Gemini (ফ্রি)</strong></td>
+        <td>পূর্ণ Gemini 1.5 অ্যাক্সেস</td>
+        <td>রিসার্চ, অ্যানালাইসিস</td>
+      </tr>
+      <tr>
+        <td><strong>Canva (ফ্রি)</strong></td>
+        <td>হাজারো টেমপ্লেট</td>
+        <td>সোশ্যাল মিডিয়া ডিজাইন</td>
+      </tr>
+      <tr>
+        <td><strong>CapCut (ফ্রি)</strong></td>
+        <td>পূর্ণ ভিডিও এডিটর</td>
+        <td>রিলস, শর্টস, ভিডিও</td>
+      </tr>
+      <tr>
+        <td><strong>Bolt.new (ফ্রি)</strong></td>
+        <td>মাসে কিছু ক্রেডিট</td>
+        <td>ওয়েবসাইট তৈরি</td>
+      </tr>
+      <tr>
+        <td><strong>ElevenLabs (ফ্রি)</strong></td>
+        <td>মাসে ১০,০০০ ক্যারেক্টার</td>
+        <td>ভয়েস ওভার</td>
+      </tr>
+      <tr>
+        <td><strong>Ideogram (ফ্রি)</strong></td>
+        <td>প্রতিদিন ১০+ ইমেজ</td>
+        <td>লোগো, ব্যানার</td>
+      </tr>
+    </table>
+
+    <div class="info-box">
+      <div class="info-icon">🎯</div>
+      <div>
+        <strong>ফ্রি স্টার্টার প্যাক:</strong> উপরের ৮টি ফ্রি টুল দিয়েই আপনি মাসে ৳২০,০০০-৳৪০,০০০ উপার্জন শুরু করতে পারবেন। পেইড টুলের প্রয়োজন নেই — অন্তত প্রথম ৩ মাস।
+      </div>
+    </div>
+
+    <h3>৬.২ কখন পেইড টুলে আপগ্রেড করবেন?</h3>
+
+    <div class="card card-accent">
+      <h4>📌 নিয়ম: ROI পজিটিভ হলেই আপগ্রেড করুন</h4>
+      <p>একটি পেইড টুলে বিনিয়োগ করুন যদি:</p>
+      <ul class="custom-list">
+        <li>ফ্রি লিমিট শেষ হয়ে কাজ আটকে যাচ্ছে</li>
+        <li>পেইড ফিচার দিয়ে বেশি আয় হবে বলে নিশ্চিত</li>
+        <li>মাসিক আয় টুলের খরচের ৫ গুণ হলে</li>
+      </ul>
+    </div>
+
+    <h3>৬.৩ ROI ক্যালকুলেশনের সহজ ফর্মুলা</h3>
+
+    <div class="card card-blue">
+      <h4>📊 ROI ফর্মুলা</h4>
+      <div style="text-align: center; font-size: 20px; padding: 15px; background: var(--light); border-radius: 8px; margin: 10px 0;">
+        <strong>ROI = (মাসিক আয় ÷ মাসিক টুল খরচ) × ১০০</strong>
+      </div>
+      <p><strong>উদাহরণ:</strong></p>
+      <ul class="custom-list">
+        <li>Midjourney: $10/মাস → ডিজাইন সার্ভিস থেকে আয় $200 → ROI = 2000%</li>
+        <li>ChatGPT Plus: $20/মাস → কন্টেন্ট রাইটিং থেকে আয় $500 → ROI = 2500%</li>
+        <li>ElevenLabs Pro: $22/মাস → ভয়েস ওভার সার্ভিস থেকে আয় $300 → ROI = 1363%</li>
+      </ul>
+    </div>
+
+    <h3>৬.৪ প্রস্তাবিত পেইড টুল টাইমলাইন</h3>
+
+    <table class="roi-table">
+      <tr>
+        <th>সময়কাল</th>
+        <th>আনুমানিক আয়</th>
+        <th>বিনিয়োগ করুন</th>
+        <th>খরচ/মাস</th>
+      </tr>
+      <tr>
+        <td>মাস ১-৩</td>
+        <td>৳০ - ৳২০,০০০</td>
+        <td>শুধু ফ্রি টুলস</td>
+        <td>৳০</td>
+      </tr>
+      <tr>
+        <td>মাস ৪-৬</td>
+        <td>৳২০,০০০ - ৳৫০,০০০</td>
+        <td>ChatGPT Plus + Midjourney</td>
+        <td>~৳৩,০০০</td>
+      </tr>
+      <tr>
+        <td>মাস ৭-১২</td>
+        <td>৳৫০,০০০+</td>
+        <td>Claude Pro + ElevenLabs + Runway</td>
+        <td>~৳৭,০০০</td>
+      </tr>
+      <tr>
+        <td>মাস ১২+</td>
+        <td>৳১,০০,০০০+</td>
+        <td>সম্পূর্ণ AI Stack</td>
+        <td>~৳১৫,০০০</td>
+      </tr>
+    </table>
+
+  </div>
+</div>
+
+<!-- ===================== CHAPTER 7 ===================== -->
+<div class="chapter">
+  <div class="chapter-hero" style="background: linear-gradient(135deg, #880e4f 0%, #c2185b 100%);">
+    <div class="chapter-num">অধ্যায় ০৭</div>
+    <h2>🚀 ৩০ দিনের অ্যাকশন প্ল্যান<br>চ্যালেঞ্জ ২০২৬</h2>
+    <p>আজ থেকে শুরু করুন। ৩০ দিনে আপনার প্রথম আয় নিশ্চিত করুন।</p>
+  </div>
+
+  <div class="chapter-body">
+
+    <div class="highlight" style="background: linear-gradient(135deg, #880e4f, #c2185b);">
+      <h3>⚡ চ্যালেঞ্জের নিয়ম</h3>
+      <p>প্রতিদিন অন্তত ১ ঘণ্টা এআই টুলস শিখুন ও প্র্যাকটিস করুন। ৩০ দিন পর আপনার কমপক্ষে একটি পেইড প্রজেক্ট থাকবে।</p>
+    </div>
+
+    <h3>সপ্তাহ ১ (দিন ১-৭): ভিত্তি তৈরি</h3>
+
+    <div class="day-plan">
+      <div class="day-card">
+        <div class="day-num">দিন ১-২</div>
+        <h4>টুলস পরিচিতি</h4>
+        <ul>
+          <li>ChatGPT অ্যাকাউন্ট খুলুন</li>
+          <li>Claude.ai ট্রাই করুন</li>
+          <li>Canva ও CapCut ডাউনলোড করুন</li>
+          <li>প্রতিটিতে ১০টি প্রম্পট চেষ্টা করুন</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-num">দিন ৩-৪</div>
+        <h4>প্রম্পট চর্চা</h4>
+        <ul>
+          <li>RCTCO ফ্রেমওয়ার্ক অনুশীলন</li>
+          <li>৫টি ভিন্ন ধরনের কন্টেন্ট লিখুন</li>
+          <li>ইমেজ জেনারেশন শিখুন</li>
+          <li>প্রম্পট ব্যাংক তৈরি শুরু</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-num">দিন ৫-৭</div>
+        <h4>প্রথম প্রজেক্ট</h4>
+        <ul>
+          <li>নিজের জন্য একটি পোর্টফোলিও সাইট</li>
+          <li>Bolt.new দিয়ে তৈরি করুন</li>
+          <li>৩টি স্যাম্পল কাজ তৈরি</li>
+          <li>বন্ধু/পরিবারকে দেখান</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>সপ্তাহ ২ (দিন ৮-১৪): দক্ষতা উন্নয়ন</h3>
+
+    <div class="day-plan">
+      <div class="day-card">
+        <div class="day-num">দিন ৮-১০</div>
+        <h4>নির্দিষ্ট স্কিল বাছুন</h4>
+        <ul>
+          <li>একটি সার্ভিসে ফোকাস করুন</li>
+          <li>ওই বিষয়ে ৫টি প্রজেক্ট করুন</li>
+          <li>ইউটিউবে টিউটোরিয়াল দেখুন</li>
+          <li>প্রতিদিন ১টি নতুন প্রম্পট শিখুন</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-num">দিন ১১-১২</div>
+        <h4>পোর্টফোলিও তৈরি</h4>
+        <ul>
+          <li>সেরা ৫টি কাজ বাছুন</li>
+          <li>প্রতিটির স্ক্রিনশট নিন</li>
+          <li>সংক্ষিপ্ত বিবরণ লিখুন</li>
+          <li>PDF পোর্টফোলিও তৈরি</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-num">দিন ১৩-১৪</div>
+        <h4>প্রফেশনাল প্রোফাইল</h4>
+        <ul>
+          <li>LinkedIn প্রোফাইল আপডেট</li>
+          <li>Fiverr প্রোফাইল তৈরি</li>
+          <li>প্রফেশনাল ছবি আপলোড</li>
+          <li>বায়ো লিখুন AI দিয়ে</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>সপ্তাহ ৩ (দিন ১৫-২১): বাজারে প্রবেশ</h3>
+
+    <div class="day-plan">
+      <div class="day-card">
+        <div class="day-num">দিন ১৫-১৭</div>
+        <h4>প্রথম Gig লাইভ</h4>
+        <ul>
+          <li>Fiverr-এ ১ম Gig পাবলিশ</li>
+          <li>Upwork প্রোফাইল সম্পন্ন</li>
+          <li>১০টি প্রথম Proposal পাঠান</li>
+          <li>দামে ছাড় দিয়ে শুরু করুন</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-num">দিন ১৮-১৯</div>
+        <h4>লোকাল মার্কেট</h4>
+        <ul>
+          <li>LinkedIn কানেকশন বাড়ান</li>
+          <li>৫টি লোকাল বিজনেসকে DM</li>
+          <li>ফ্রি স্যাম্পল অফার করুন</li>
+          <li>Facebook গ্রুপে পোস্ট করুন</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-num">দিন ২০-২১</div>
+        <h4>নিজের পেজ তৈরি</h4>
+        <ul>
+          <li>Facebook বিজনেস পেজ</li>
+          <li>LinkedIn পোস্ট শুরু করুন</li>
+          <li>আপনার কাজের ভিডিও শেয়ার</li>
+          <li>৩টি কেস স্টাডি পোস্ট</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>সপ্তাহ ৪ (দিন ২২-৩০): প্রথম আয়</h3>
+
+    <div class="day-plan">
+      <div class="day-card">
+        <div class="day-num">দিন ২২-২৫</div>
+        <h4>ক্লায়েন্ট ফলো-আপ</h4>
+        <ul>
+          <li>আগের সব DM ফলো-আপ</li>
+          <li>Proposal ট্র্যাক করুন</li>
+          <li>নতুন ১০টি বিড করুন</li>
+          <li>ফ্রি অডিট অফার করুন</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-num">দিন ২৬-২৮</div>
+        <h4>প্রথম অর্ডার</h4>
+        <ul>
+          <li>প্রথম কাজ ১০০% মনোযোগে করুন</li>
+          <li>ডেডলাইনের আগেই দিন</li>
+          <li>রিভিউ চান বিনম্রভাবে</li>
+          <li>Testimonial সংগ্রহ করুন</li>
+        </ul>
+      </div>
+      <div class="day-card">
+        <div class="day-num">দিন ২৯-৩০</div>
+        <h4>মূল্যায়ন ও পরিকল্পনা</h4>
+        <ul>
+          <li>কী শিখলেন রিভিউ করুন</li>
+          <li>দাম বাড়ানোর পরিকল্পনা</li>
+          <li>পরবর্তী ৩০ দিনের লক্ষ্য</li>
+          <li>আয়ের কিছু অংশ বিনিয়োগ</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card card-green" style="margin-top: 30px;">
+      <h4>🏆 ৩০ দিনের টার্গেট</h4>
+      <ul class="custom-list">
+        <li>কমপক্ষে ১টি পেইড প্রজেক্ট সম্পন্ন</li>
+        <li>৫+ প্ল্যাটফর্মে প্রোফাইল অ্যাক্টিভ</li>
+        <li>পোর্টফোলিওতে ৫-১০টি কাজ</li>
+        <li>প্রথম মাসিক আয়: ন্যূনতম ৳৫,০০০-১০,০০০</li>
+        <li>৩টি নিয়মিত ক্লায়েন্ট লক্ষ্য</li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===================== BONUS PROMPT BANK ===================== -->
+<div class="chapter">
+  <div class="chapter-hero" style="background: linear-gradient(135deg, #f57f17 0%, #ff8f00 100%);">
+    <div class="chapter-num">★ বোনাস অধ্যায়</div>
+    <h2>🎁 ১০০+ রেডিমেড প্রম্পট ব্যাংক</h2>
+    <p>কপি করুন, কাস্টমাইজ করুন, সরাসরি ব্যবহার করুন।</p>
+  </div>
+
+  <div class="chapter-body">
+
+    <h3>📝 কন্টেন্ট রাইটিং প্রম্পট</h3>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #১ — ব্লগ আর্টিকেল</div>
+      Write a 1200-word, SEO-optimized blog post titled "[TOPIC]" targeting the keyword "[KEYWORD]". Include: engaging H1, hook introduction, 5 H2 sections with practical tips, statistics, a real-world example, and a conclusion with CTA. Tone: friendly but professional. Audience: [TARGET AUDIENCE].
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #২ — প্রোডাক্ট ডেসক্রিপশন</div>
+      Write 3 compelling product descriptions for "[PRODUCT NAME]" — a [SHORT PRODUCT DESCRIPTION]. Each description should be 100-150 words, highlight 3 key benefits, include power words, and end with a purchase-triggering CTA. Target buyer: [BUYER PERSONA].
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #৩ — ইমেইল নিউজলেটার</div>
+      Write a weekly email newsletter for [BRAND NAME] (a [BUSINESS TYPE]) about "[TOPIC THIS WEEK]". Include: attention-grabbing subject line, personal opening, 3 valuable tips/updates, 1 featured product or resource, and a friendly sign-off. Word count: 300-400 words.
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #৪ — About Us পেজ</div>
+      Write a compelling "About Us" page for [COMPANY NAME], a [COMPANY TYPE] founded in [YEAR] in [LOCATION]. The company [WHAT THEY DO] for [TARGET CUSTOMERS]. Tone: trustworthy, human, and inspiring. Include: origin story, mission, values, and a team introduction section. Length: 400-500 words.
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #৫ — ফেসবুক বিজ্ঞাপন কপি</div>
+      Write 5 Facebook ad copies for [PRODUCT/SERVICE] targeting [AUDIENCE]. Each ad should have: a scroll-stopping first line, a clear value proposition, social proof or urgency element, and a strong CTA. Variations: emotional, logical, fear-based, curiosity, and offer-based. Keep each under 125 words.
+    </div>
+
+    <h3>💻 ওয়েব ডেভেলপমেন্ট প্রম্পট</h3>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #৬ — Hero Section</div>
+      Create a modern, responsive hero section for a [BUSINESS TYPE] website using React and Tailwind CSS. Include: compelling headline, subheadline, primary and secondary CTA buttons, a background gradient from [COLOR1] to [COLOR2], and a simple SVG illustration on the right. Make it mobile-first.
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #৭ — Contact Form</div>
+      Build a clean contact form component with React. Fields: Name, Email, Phone (optional), Subject (dropdown with 5 options), Message. Features: form validation, loading state on submit, success/error toast notifications, and Tailwind styling. No external libraries except React.
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #৮ — Pricing Section</div>
+      Create a 3-tier pricing section (Basic/Pro/Enterprise) for a SaaS product using React and Tailwind. Include: most popular badge on middle tier, feature list with checkmarks, monthly/yearly toggle, CTA buttons, and a FAQ section below. Color scheme: [COLOR SCHEME].
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #৯ — Portfolio Website</div>
+      Create a complete single-page portfolio website for a [JOB TITLE] named [NAME]. Sections: Hero with animated text, About with skills progress bars, Projects grid (6 cards), Services (4 cards), Testimonials carousel, and Contact form. Use dark theme with [ACCENT COLOR] highlights. Pure HTML, CSS, and vanilla JS.
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #১০ — E-commerce Product Page</div>
+      Build a product detail page for an e-commerce site selling [PRODUCT TYPE]. Include: image gallery with thumbnail nav, product title, price with discount badge, size/color selector, quantity input, Add to Cart button with animation, product description tabs, and related products grid. Framework: React + Tailwind.
+    </div>
+
+    <h3>🎨 ইমেজ জেনারেশন প্রম্পট (Midjourney)</h3>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #১১ — প্রফেশনাল লোগো</div>
+      Minimalist logo for a [BUSINESS TYPE] named "[BRAND NAME]", vector style, [COLORS], clean lines, modern, professional, white background, suitable for business card --v 6 --ar 1:1 --style raw
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #১২ — সোশ্যাল মিডিয়া ব্যানার</div>
+      Professional LinkedIn banner for a [PROFESSION] specialist, modern corporate design, [COLORS] gradient background, subtle tech elements, text space on left side, ultra-realistic, 8K quality --ar 4:1 --v 6
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #১৩ — বুক কভার</div>
+      Bestselling book cover for "[BOOK TITLE]" by [AUTHOR], genre: [GENRE], dramatic lighting, [MAIN VISUAL ELEMENT], bold typography space at top and bottom, cinematic quality, professional publishing standard --ar 2:3 --v 6 --q 2
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #১৪ — টি-শার্ট ডিজাইন</div>
+      Trendy t-shirt graphic design, [THEME/CONCEPT], vintage distressed style, [COLORS], centered composition, suitable for DTG printing, transparent background, high contrast --ar 1:1 --v 6 --style raw
+    </div>
+
+    <h3>📱 সোশ্যাল মিডিয়া প্রম্পট</h3>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #১৫ — ইনস্টাগ্রাম ক্যাপশন (৭ দিনের)</div>
+      Create a 7-day Instagram content calendar for [BRAND] in [INDUSTRY]. Each post needs: theme, caption (150 words max), 15 hashtags, and emoji usage. Mix of: educational (2), inspirational (2), promotional (1), behind-the-scenes (1), user-engagement (1). Tone: [BRAND VOICE].
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #১৬ — LinkedIn আর্টিকেল</div>
+      Write a viral LinkedIn article about "[TOPIC]" from the perspective of a [PROFESSION] with [X] years of experience. Start with a counterintuitive hook, share a personal story, 5 actionable lessons, and a thought-provoking question at the end. Length: 800 words. No generic advice.
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #১৭ — ইউটিউব শর্টস স্ক্রিপ্ট</div>
+      Write a 60-second YouTube Shorts script about "[TOPIC]". Structure: Hook (0-5 sec) → Problem (5-15 sec) → Solution/Tips (15-50 sec) → CTA (50-60 sec). Use simple language, conversational tone, and include "[PAUSE]" markers. Target: [AUDIENCE].
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #১৮ — ভয়েস ওভার স্ক্রিপ্ট</div>
+      Write a professional voiceover script for a [DURATION]-minute explainer video about [TOPIC] for [COMPANY NAME]. Style: conversational yet authoritative. Include natural pauses marked as [PAUSE], emphasis words in CAPS, and section markers. Reading pace: 130 words per minute.
+    </div>
+
+    <h3>💼 বিজনেস ও ক্লায়েন্ট কমিউনিকেশন প্রম্পট</h3>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #১৯ — কোল্ড ইমেইল টেমপ্লেট</div>
+      Write a cold outreach email to [JOB TITLE] at [COMPANY TYPE] offering [YOUR SERVICE]. Make it: short (under 150 words), personalized, problem-focused (not service-focused), with one specific value proposition, and a low-friction CTA (not "book a call"). Subject line: intriguing but professional.
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #২০ — প্রাইস নেগোশিয়েশন রিপ্লাই</div>
+      Write a polite but firm reply to a client asking for a [X]% discount on my [SERVICE] priced at $[PRICE]. My response should: acknowledge their concern, briefly justify my pricing with 2 specific reasons, offer an alternative (smaller scope or payment plan), and maintain a collaborative tone without sounding defensive.
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #২১ — প্রজেক্ট প্রপোজাল</div>
+      Create a professional project proposal for [CLIENT NAME] for [PROJECT TYPE]. Include: executive summary, project objectives, scope of work (5 deliverables), timeline (4 milestones), investment breakdown, terms, and a next steps section. Tone: confident and client-centric. Format: clean sections with headers.
+    </div>
+
+    <h3>🧠 AI ব্যবহারে উন্নত প্রম্পট কৌশল</h3>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #২২ — প্রতিযোগিতামূলক বিশ্লেষণ</div>
+      Analyze the top 5 competitors of [BRAND] in [INDUSTRY]. For each, cover: pricing strategy, key messaging, target audience, content strengths, and weaknesses. Then identify 3 market gaps [BRAND] can exploit. Format as a structured report with an executive summary.
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #২৩ — কন্টেন্ট রিপার্পোজিং</div>
+      I have this [BLOG POST / VIDEO TRANSCRIPT / PODCAST NOTES]: [PASTE CONTENT HERE]. Repurpose it into: 5 Twitter/X threads, 3 LinkedIn posts, 1 Instagram carousel outline (10 slides), 1 email newsletter, and 5 short video script hooks. Maintain the original insights but adapt tone for each platform.
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #২৪ — ক্লায়েন্ট রিপোর্ট</div>
+      Write a monthly performance report for [CLIENT NAME]'s social media. Data: [PASTE METRICS]. The report should include: executive summary, key wins, areas for improvement, next month's strategy (3 initiatives), and a visual-ready data table. Tone: professional, results-focused, and forward-looking.
+    </div>
+
+    <div class="prompt-bank-item">
+      <div class="prompt-bank-title">🔖 #২৫ — AI দিয়ে প্রম্পট তৈরি</div>
+      You are a world-class Prompt Engineer. My goal is to [YOUR GOAL] using [AI TOOL]. Help me create the most effective, detailed prompt for this task. Consider: the ideal role, specific context, output format, constraints, and evaluation criteria. Also provide 3 variations of increasing complexity.
+    </div>
+
+    <div class="footer-note">
+      <strong>💡 টিপ:</strong> প্রতিটি প্রম্পটের [ ] অংশ নিজের তথ্য দিয়ে পূরণ করুন। প্রথম আউটপুটের পর "Make it more [specific instruction]" বলে ইটারেট করুন। প্র্যাকটিসই পারফেক্ট করে।
+    </div>
+
+    <div style="text-align:center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, #0d1b6e, #1565c0); border-radius: 16px; color: white;">
+      <div style="font-size: 40px; margin-bottom: 15px;">🚀</div>
+      <h2 style="font-size: 26px; margin-bottom: 15px; color: white;">আপনার যাত্রা শুরু হোক আজই!</h2>
+      <p style="color: rgba(255,255,255,0.85); font-size: 16px; max-width: 500px; margin: 0 auto 20px;">এই গাইডের প্রতিটি কৌশল বাস্তবে প্রয়োগ করুন। মনে রাখবেন — জ্ঞান নয়, বাস্তব পদক্ষেপই পার্থক্য তৈরি করে।</p>
+      <div style="background: #ff6f00; display: inline-block; padding: 12px 30px; border-radius: 30px; font-weight: 700; font-size: 16px;">আজ থেকেই শুরু করুন ✨</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

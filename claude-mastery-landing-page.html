@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ক্লড মাস্টারি — বাংলাদেশের জন্য সম্পূর্ণ গাইড</title>
+<meta name="description" content="Claude AI দিয়ে সিরিয়াস কাজ করার সম্পূর্ণ বাংলা গাইড — ছাত্র, ফ্রিল্যান্সার, উদ্যোক্তা ও চাকরিজীবীদের জন্য। ফ্রি ডাউনলোড করুন।">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+
+/* ============ TOKENS ============ */
+:root{
+  --ink:#1B1730;
+  --ink-soft:#4A4566;
+  --paper:#FFFCF6;
+  --paper-dim:#F7F1E6;
+  --card:#FFFFFF;
+  --indigo:#27225A;
+  --indigo-deep:#1A1640;
+  --coral:#FF6B4A;
+  --coral-deep:#E8502E;
+  --teal:#0FB6A8;
+  --gold:#FFC23C;
+  --line:#E7DFD0;
+  --shadow: 0 10px 30px -10px rgba(27,23,48,0.18);
+  --radius-lg: 28px;
+  --radius-md: 18px;
+  --radius-sm: 12px;
+  --maxw: 1180px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Hind Siliguri', sans-serif;
+  font-size:17px;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+h1,h2,h3,h4{
+  font-family:'Baloo 2', 'Hind Siliguri', sans-serif;
+  margin:0;
+  line-height:1.25;
+  color:var(--indigo-deep);
+}
+p{margin:0;}
+a{color:inherit; text-decoration:none;}
+img{max-width:100%; display:block;}
+button{font-family:inherit; cursor:pointer; border:none; background:none;}
+.wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+.eyebrow{
+  font-family:'JetBrains Mono', monospace;
+  font-size:12.5px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--coral-deep);
+  font-weight:600;
+}
+.visually-hidden{position:absolute; left:-9999px;}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:0.001ms !important; animation-iteration-count:1 !important; transition-duration:0.001ms !important; scroll-behavior:auto !important;}
+}
+
+/* ============ TOPBAR ============ */
+.topbar{
+  position:sticky; top:0; z-index:50;
+  background:rgba(255,252,246,0.88);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{
+  display:flex; align-items:center; justify-content:space-between;
+  height:72px;
+}
+.brand{display:flex; align-items:center; gap:10px; font-family:'Baloo 2'; font-weight:700; font-size:20px; color:var(--indigo-deep);}
+.brand-mark{
+  width:36px; height:36px; border-radius:11px;
+  background:linear-gradient(135deg, var(--coral) 0%, var(--gold) 100%);
+  display:flex; align-items:center; justify-content:center;
+  font-family:'JetBrains Mono'; font-weight:700; color:#fff; font-size:15px;
+  box-shadow: 0 4px 10px -2px rgba(255,107,74,0.55);
+  flex-shrink:0;
+}
+.topnav{display:flex; gap:30px; align-items:center;}
+.topnav a{font-size:15px; font-weight:600; color:var(--ink-soft);}
+.topnav a:hover{color:var(--coral-deep);}
+.nav-cta{
+  background:var(--indigo-deep); color:#fff !important;
+  padding:10px 20px; border-radius:999px; font-weight:700 !important;
+  font-size:14.5px !important;
+}
+.nav-cta:hover{background:var(--coral-deep) !important;}
+.burger{display:none; flex-direction:column; gap:5px; padding:8px;}
+.burger span{width:24px; height:2.5px; background:var(--indigo-deep); border-radius:2px;}
+
+/* ============ HERO ============ */
+.hero{
+  position:relative;
+  padding:84px 0 70px;
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute; inset:0;
+  background:
+    radial-gradient(620px 420px at 88% -8%, rgba(255,194,60,0.30), transparent 60%),
+    radial-gradient(520px 420px at -6% 18%, rgba(15,182,168,0.20), transparent 60%);
+  pointer-events:none;
+}
+.hero-grid{
+  position:relative; z-index:1;
+  display:grid; grid-template-columns:1.05fr 0.95fr; gap:56px; align-items:center;
+}
+.hero-eyebrow{display:flex; align-items:center; gap:10px; margin-bottom:18px;}
+.hero-eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--teal); box-shadow:0 0 0 4px rgba(15,182,168,0.18);}
+.hero h1{
+  font-size:clamp(34px, 4.6vw, 56px);
+  font-weight:800;
+  letter-spacing:-0.01em;
+}
+.hero h1 .accent{color:var(--coral-deep); position:relative; white-space:nowrap;}
+.hero h1 .accent svg{position:absolute; left:0; bottom:-6px; width:100%; height:14px;}
+.hero-sub{
+  margin-top:22px; font-size:18.5px; color:var(--ink-soft); max-width:540px;
+}
+.hero-actions{display:flex; gap:16px; align-items:center; margin-top:34px; flex-wrap:wrap;}
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  padding:16px 28px; border-radius:999px; font-weight:700; font-size:16.5px;
+  transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.btn-primary{
+  background:var(--coral); color:#fff;
+  box-shadow:0 14px 28px -10px rgba(232,80,46,0.55);
+}
+.btn-primary:hover{background:var(--coral-deep); transform:translateY(-2px);}
+.btn-primary:active{transform:translateY(0);}
+.btn-ghost{
+  background:transparent; color:var(--indigo-deep);
+  border:2px solid var(--line);
+}
+.btn-ghost:hover{border-color:var(--indigo-deep);}
+.btn svg{width:20px; height:20px; flex-shrink:0;}
+.hero-meta{
+  margin-top:18px; display:flex; gap:18px; flex-wrap:wrap; font-size:14px; color:var(--ink-soft);
+}
+.hero-meta span{display:inline-flex; align-items:center; gap:7px;}
+.hero-meta svg{width:16px; height:16px; color:var(--teal); flex-shrink:0;}
+
+/* ---- hero visual: chat mock ---- */
+.hero-visual{position:relative;}
+.chat-card{
+  background:var(--indigo-deep);
+  border-radius:var(--radius-lg);
+  padding:26px 24px 30px;
+  box-shadow: 0 30px 60px -20px rgba(27,23,48,0.45);
+  position:relative;
+  z-index:2;
+}
+.chat-card::before{
+  content:"";
+  position:absolute; inset:0;
+  border-radius:var(--radius-lg);
+  background: linear-gradient(160deg, rgba(255,255,255,0.06), transparent 40%);
+  pointer-events:none;
+}
+.chat-dots{display:flex; gap:7px; margin-bottom:18px;}
+.chat-dots span{width:10px;height:10px;border-radius:50%; background:rgba(255,255,255,0.18);}
+.bubble{
+  border-radius:16px; padding:13px 16px; font-size:15px; line-height:1.55;
+  margin-bottom:12px; max-width:88%;
+  opacity:0; transform:translateY(10px);
+  animation: bubbleIn .5s ease forwards;
+}
+.bubble.user{
+  background:rgba(255,255,255,0.10); color:#EFEAFF;
+  margin-left:auto; border:1px solid rgba(255,255,255,0.10);
+}
+.bubble.claude{
+  background:#fff; color:var(--ink);
+  box-shadow:0 8px 18px -8px rgba(0,0,0,0.25);
+}
+.bubble.claude b{color:var(--coral-deep);}
+.bubble .tag{
+  display:inline-block; font-family:'JetBrains Mono'; font-size:10.5px;
+  color:var(--teal); font-weight:700; margin-bottom:5px; letter-spacing:.04em;
+}
+@keyframes bubbleIn{ to{opacity:1; transform:translateY(0);} }
+.b1{animation-delay:.15s;} .b2{animation-delay:.55s;} .b3{animation-delay:.95s;} .b4{animation-delay:1.35s;}
+.typing{display:inline-flex; gap:4px; padding:4px 0;}
+.typing span{width:6px; height:6px; border-radius:50%; background:var(--ink-soft); opacity:.4; animation:blink 1.2s infinite;}
+.typing span:nth-child(2){animation-delay:.2s;} .typing span:nth-child(3){animation-delay:.4s;}
+@keyframes blink{0%,80%,100%{opacity:.25;} 40%{opacity:.9;}}
+
+.float-card{
+  position:absolute; background:var(--card); border-radius:var(--radius-sm);
+  box-shadow:var(--shadow); padding:12px 16px; font-size:13.5px; font-weight:700;
+  display:flex; align-items:center; gap:8px; color:var(--indigo-deep);
+  border:1px solid var(--line); z-index:3;
+}
+.float-card.f1{top:-18px; left:-26px; animation: floaty 5s ease-in-out infinite;}
+.float-card.f2{bottom:18px; right:-30px; animation: floaty 5.6s ease-in-out infinite reverse;}
+.float-card .dotcolor{width:9px;height:9px;border-radius:50%; flex-shrink:0;}
+@keyframes floaty{0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);}}
+
+/* ============ SECTION SHELL ============ */
+section{padding:88px 0;}
+.section-head{max-width:680px; margin-bottom:52px;}
+.section-head h2{font-size:clamp(28px,3.2vw,38px); font-weight:800; margin-top:14px;}
+.section-head p{margin-top:14px; font-size:17px; color:var(--ink-soft);}
+.divider{height:1px; background:var(--line); border:none; margin:0;}
+
+/* ============ PROBLEM / STORY STRIP ============ */
+.story{background:var(--indigo-deep); color:#fff;}
+.story .wrap{display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:center;}
+.story h2{color:#fff; font-size:clamp(26px,3vw,34px);}
+.story-side p{color:#D8D4EE; font-size:16.5px; margin-top:14px;}
+.story-cards{display:flex; flex-direction:column; gap:14px;}
+.story-card{
+  background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+  border-radius:var(--radius-md); padding:20px 22px;
+}
+.story-card .amount{font-family:'Baloo 2'; font-weight:800; font-size:26px; color:var(--gold);}
+.story-card.low .amount{color:#9CA3D6;}
+.story-card p{color:#C9C5E6; font-size:14.5px; margin-top:6px;}
+.story-vs{
+  align-self:center; text-align:center; font-family:'JetBrains Mono'; font-size:13px;
+  color:#9C97C2; letter-spacing:.08em;
+}
+
+/* ============ WHAT'S INSIDE — chapter list ============ */
+.chapters{background:var(--paper-dim);}
+.chap-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+.chap-card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius-md);
+  padding:26px 24px; transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.chap-card:hover{transform:translateY(-5px); box-shadow:var(--shadow); border-color:transparent;}
+.chap-num{
+  font-family:'JetBrains Mono'; font-size:13px; font-weight:700; color:var(--teal);
+  letter-spacing:.05em;
+}
+.chap-card h3{font-size:18.5px; margin-top:10px; font-weight:700;}
+.chap-card p{font-size:14.5px; color:var(--ink-soft); margin-top:8px;}
+
+/* ============ FEATURES (chat-bubble motif) ============ */
+.features-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+.feat-card{
+  border-radius:var(--radius-md); padding:28px 24px;
+  border:1px solid var(--line); background:var(--card);
+  position:relative;
+}
+.feat-icon{
+  width:46px; height:46px; border-radius:14px;
+  display:flex; align-items:center; justify-content:center;
+  margin-bottom:18px;
+}
+.feat-icon svg{width:24px; height:24px; color:#fff;}
+.feat-card h3{font-size:18px; font-weight:700;}
+.feat-card p{font-size:14.5px; color:var(--ink-soft); margin-top:9px;}
+.feat-card .feat-q{
+  margin-top:16px; font-family:'JetBrains Mono'; font-size:12px; color:var(--ink-soft);
+  background:var(--paper-dim); border-radius:10px; padding:10px 12px;
+  border-left:3px solid var(--coral);
+}
+.c-coral{background:linear-gradient(135deg,var(--coral),var(--coral-deep));}
+.c-teal{background:linear-gradient(135deg,#22D3C5,var(--teal));}
+.c-gold{background:linear-gradient(135deg,#FFD166,var(--gold));}
+.c-indigo{background:linear-gradient(135deg,#473F8F,var(--indigo-deep));}
+
+/* ============ WHO IT'S FOR ============ */
+.who{background:var(--paper-dim);}
+.who-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:14px;}
+.who-card{
+  background:var(--card); border-radius:var(--radius-md); padding:24px 16px;
+  text-align:center; border:1px solid var(--line);
+}
+.who-card .emoji{font-size:30px;}
+.who-card h4{font-size:15px; margin-top:12px; font-weight:700;}
+.who-card p{font-size:13px; color:var(--ink-soft); margin-top:6px;}
+
+/* ============ TOC PREVIEW ============ */
+.toc-list{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius-lg);
+  padding:10px; overflow:hidden;
+}
+.toc-row{
+  display:flex; align-items:center; gap:16px;
+  padding:16px 20px; border-bottom:1px solid var(--line);
+}
+.toc-row:last-child{border-bottom:none;}
+.toc-row .n{
+  font-family:'JetBrains Mono'; font-weight:700; color:var(--coral-deep); font-size:14px;
+  width:30px; flex-shrink:0;
+}
+.toc-row .t{font-weight:600; font-size:15.5px; flex:1;}
+.toc-row .tag{
+  font-family:'JetBrains Mono'; font-size:11px; color:var(--teal); background:rgba(15,182,168,0.1);
+  padding:4px 10px; border-radius:999px; font-weight:700; flex-shrink:0;
+}
+
+/* ============ DOWNLOAD CTA ============ */
+.download{
+  background: linear-gradient(155deg, var(--indigo-deep) 0%, #2B2566 55%, var(--coral-deep) 130%);
+  color:#fff; position:relative; overflow:hidden;
+}
+.download::after{
+  content:""; position:absolute; inset:0;
+  background: radial-gradient(500px 300px at 85% 10%, rgba(255,194,60,0.25), transparent 60%);
+}
+.dl-box{
+  position:relative; z-index:1;
+  display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;
+}
+.download h2{color:#fff; font-size:clamp(28px,3.4vw,40px);}
+.download .section-head p{color:#D8D4EE;}
+.dl-card{
+  background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.15);
+  border-radius:var(--radius-lg); padding:32px; backdrop-filter:blur(6px);
+}
+.dl-file{
+  display:flex; align-items:center; gap:14px; padding:14px 16px;
+  background:rgba(255,255,255,0.07); border-radius:14px; margin-bottom:20px;
+}
+.dl-file .ficon{
+  width:42px; height:42px; border-radius:10px; background:#fff; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; font-size:18px;
+}
+.dl-file .fname{font-weight:700; font-size:15px;}
+.dl-file .fsize{font-size:12.5px; color:#C9C5E6; margin-top:2px;}
+.btn-download{
+  width:100%; justify-content:center;
+  background:var(--gold); color:var(--indigo-deep);
+  box-shadow:0 14px 30px -10px rgba(255,194,60,0.55);
+  font-size:17.5px;
+}
+.btn-download:hover{background:#fff; transform:translateY(-2px);}
+.dl-note{
+  text-align:center; font-size:13px; color:#B8B3DE; margin-top:14px;
+}
+.dl-points{display:flex; flex-direction:column; gap:16px; margin-top:26px;}
+.dl-points div{display:flex; gap:12px; align-items:flex-start; font-size:15px; color:#E3E0F5;}
+.dl-points svg{width:20px; height:20px; color:var(--teal); flex-shrink:0; margin-top:2px;}
+
+/* ============ HOW TO OPEN ============ */
+.howto-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+.howto-card{padding:26px; border-radius:var(--radius-md); background:var(--paper-dim); border:1px solid var(--line);}
+.howto-step{
+  width:34px; height:34px; border-radius:50%; background:var(--indigo-deep); color:#fff;
+  display:flex; align-items:center; justify-content:center; font-family:'JetBrains Mono'; font-weight:700;
+  font-size:14px; margin-bottom:14px;
+}
+.howto-card h4{font-size:16px; font-weight:700;}
+.howto-card p{font-size:14px; color:var(--ink-soft); margin-top:8px;}
+
+/* ============ FAQ ============ */
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-q{
+  width:100%; text-align:right; display:flex; justify-content:space-between; align-items:center;
+  padding:22px 4px; font-size:16.5px; font-weight:700; color:var(--indigo-deep); gap:16px;
+}
+.faq-q .qtext{text-align:left; flex:1;}
+.faq-q .plus{
+  width:26px; height:26px; border-radius:50%; border:1.5px solid var(--line); flex-shrink:0;
+  display:flex; align-items:center; justify-content:center; position:relative; transition:transform .25s ease, border-color .25s ease;
+}
+.faq-q .plus::before, .faq-q .plus::after{
+  content:""; position:absolute; background:var(--ink); transition:transform .25s ease;
+}
+.faq-q .plus::before{width:11px; height:1.6px;}
+.faq-q .plus::after{width:1.6px; height:11px;}
+.faq-item.open .plus{transform:rotate(45deg); border-color:var(--coral);}
+.faq-a{max-height:0; overflow:hidden; transition:max-height .3s ease;}
+.faq-a p{padding:0 4px 22px; font-size:15px; color:var(--ink-soft); max-width:760px;}
+
+/* ============ FOOTER ============ */
+footer{background:var(--indigo-deep); color:#C9C5E6; padding:54px 0 30px;}
+.foot-top{display:flex; justify-content:space-between; align-items:flex-start; gap:30px; flex-wrap:wrap; padding-bottom:34px; border-bottom:1px solid rgba(255,255,255,0.12);}
+.foot-brand{display:flex; align-items:center; gap:10px; color:#fff; font-family:'Baloo 2'; font-weight:700; font-size:18px;}
+.foot-links{display:flex; gap:30px; flex-wrap:wrap;}
+.foot-links a{font-size:14.5px; font-weight:600; color:#C9C5E6;}
+.foot-links a:hover{color:#fff;}
+.foot-bottom{display:flex; justify-content:space-between; padding-top:24px; font-size:13px; color:#9C97C2; flex-wrap:wrap; gap:10px;}
+
+/* ============ REVEAL ON SCROLL ============ */
+.reveal{opacity:0; transform:translateY(22px); transition:opacity .6s ease, transform .6s ease;}
+.reveal.in{opacity:1; transform:translateY(0);}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 980px){
+  .hero-grid{grid-template-columns:1fr; gap:48px;}
+  .hero-visual{order:-1; max-width:480px; margin:0 auto;}
+  .story .wrap{grid-template-columns:1fr;}
+  .chap-grid{grid-template-columns:repeat(2,1fr);}
+  .features-grid{grid-template-columns:repeat(2,1fr);}
+  .who-grid{grid-template-columns:repeat(3,1fr);}
+  .dl-box{grid-template-columns:1fr;}
+  .howto-grid{grid-template-columns:1fr;}
+}
+@media (max-width: 720px){
+  .topnav{
+    position:fixed; top:72px; left:0; right:0; background:var(--paper);
+    flex-direction:column; align-items:stretch; padding:18px 28px 26px; gap:6px;
+    border-bottom:1px solid var(--line); transform:translateY(-110%); transition:transform .25s ease, visibility .25s ease;
+    box-shadow:0 14px 24px -10px rgba(0,0,0,0.12);
+    visibility:hidden; pointer-events:none;
+  }
+  .topnav.open{transform:translateY(0); visibility:visible; pointer-events:auto;}
+  .topnav a{padding:11px 6px; border-bottom:1px solid var(--line);}
+  .nav-cta{margin-top:8px; text-align:center;}
+  .burger{display:flex;}
+  .chap-grid{grid-template-columns:1fr;}
+  .features-grid{grid-template-columns:1fr;}
+  .who-grid{grid-template-columns:repeat(2,1fr);}
+  .who-card:last-child{grid-column:1 / -1; max-width:200px; margin:0 auto;}
+  section{padding:62px 0;}
+  .hero{padding:54px 0 46px;}
+  .float-card{display:none;}
+}
+
+/* Keyboard focus visibility */
+a:focus-visible, button:focus-visible{
+  outline:3px solid var(--teal); outline-offset:3px; border-radius:6px;
+}
+</style>
+</head>
+<body>
+
+<!-- ============ TOPBAR ============ -->
+<div class="topbar">
+  <div class="wrap">
+    <a href="#top" class="brand">
+      <span class="brand-mark">ক্ল</span>
+      ক্লড মাস্টারি
+    </a>
+    <nav class="topnav" id="topnav">
+      <a href="#whats-inside">বইয়ের ভেতরে</a>
+      <a href="#who">কাদের জন্য</a>
+      <a href="#sample">সূচিপত্র</a>
+      <a href="#faq">প্রশ্নোত্তর</a>
+      <a href="#download" class="nav-cta">ফ্রি ডাউনলোড</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="মেনু খুলুন" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        <span class="eyebrow">ফ্রি বাংলা ই-বুক · ২০২৬ সংস্করণ</span>
+      </div>
+      <h1>Claude AI কে শুধু<br>"ব্যবহার" না, <span class="accent">কমান্ড করুন</span></h1>
+      <p class="hero-sub">একই টুল, একই সাবস্ক্রিপশন — কিন্তু পার্থক্য আকাশ-পাতাল। এই সম্পূর্ণ বাংলা গাইড আপনাকে প্রম্পটিং, ডকুমেন্ট, রিসার্চ আর অটোমেশনে হাতে-কলমে মাস্টার বানাবে।</p>
+      <div class="hero-actions">
+        <a href="#download" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>
+          এখনই ফ্রি ডাউনলোড করুন
+        </a>
+        <a href="#sample" class="btn btn-ghost">সূচিপত্র দেখুন</a>
+      </div>
+      <div class="hero-meta">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> ১৫ অধ্যায় + ৩টা পরিশিষ্ট</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> ১০০% সহজ বাংলা ভাষা</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg> Word ফাইল, যেকোনো ডিভাইসে খুলবে</span>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="float-card f1"><span class="dotcolor" style="background:var(--teal)"></span> Skills দিয়ে অটোমেশন</div>
+      <div class="chat-card">
+        <div class="chat-dots"><span></span><span></span><span></span></div>
+        <div class="bubble user b1">আমার ফ্রিল্যান্স প্রপোজালটা একটা প্রফেশনাল Word ফাইল বানিয়ে দাও।</div>
+        <div class="bubble claude b2"><span class="tag">৪-ধাপ পদ্ধতি · অধ্যায় ৬</span>প্রথমে আউটলাইন বানাই, তারপর সেকশন ধরে লিখি — শেষে <b>হেডিং, কভার পেজ ও সূচিপত্র সহ</b> Word ফাইল রেডি করে দেব।</div>
+        <div class="bubble user b3">আর এই এক্সেল ডেটা থেকে একটা ইন্টারঅ্যাকটিভ ড্যাশবোর্ড?</div>
+        <div class="bubble claude b4"><span class="tag">Artifacts · অধ্যায় ৭</span><span class="typing"><span></span><span></span><span></span></span></div>
+      </div>
+      <div class="float-card f2"><span class="dotcolor" style="background:var(--coral)"></span> ২০০+ পেইজ মিনিটে বিশ্লেষণ</div>
+    </div>
+  </div>
+</header>
+
+<!-- ============ STORY / PROBLEM ============ -->
+<section class="story">
+  <div class="wrap">
+    <div class="story-side reveal">
+      <span class="eyebrow" style="color:var(--gold)">পার্থক্যটা কোথায়</span>
+      <h2>দুজন মানুষ। একই Claude সাবস্ক্রিপশন। একই ল্যাপটপ।</h2>
+      <p>একজন মাস শেষে ফ্রিল্যান্সিং করে দেড় লাখ টাকা তোলে। আরেকজন প্রায় একই স্কিল নিয়ে বসে আছে — মাসে পনেরো হাজারও ঠিকমতো হয় না। পার্থক্যটা টুলে না, পার্থক্যটা কমান্ড করার পদ্ধতিতে। এই বই ঠিক সেই ফাঁকটাই পূরণ করে।</p>
+    </div>
+    <div class="story-cards reveal">
+      <div class="story-card">
+        <div class="amount">৳১,৫০,০০০ / মাস</div>
+        <p>যিনি Claude-কে প্রপারভাবে কমান্ড করেন — সিস্টেম, Skills ও Projects দিয়ে সাজানো ওয়ার্কফ্লো</p>
+      </div>
+      <div class="story-vs">— ঠিক একই টুল —</div>
+      <div class="story-card low">
+        <div class="amount">৳১৫,০০০ / মাস</div>
+        <p>যিনি শুধু সাধারণ প্রশ্ন-উত্তরে আটকে আছেন — একই ক্ষমতার টুল, কিন্তু ব্যবহারের গভীরতা নেই</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT'S INSIDE — chapters ============ -->
+<section class="chapters" id="whats-inside">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">বইয়ের ভেতরে যা পাবেন</span>
+      <h2>একটা ফিচার-লিস্ট বই না — একটা মাস্টারক্লাস</h2>
+      <p>প্রতিটা অধ্যায়ে তিনটা জিনিস: ধারণা, পদ্ধতি, আর বাংলাদেশের বাস্তব প্রেক্ষাপটে রেডি-টু-ইউজ উদাহরণ।</p>
+    </div>
+    <div class="chap-grid reveal">
+      <div class="chap-card"><div class="chap-num">০১ — ০৩</div><h3>ভিত্তি গড়া</h3><p>AI ল্যান্ডস্কেপ, অ্যাকাউন্ট সেটআপ, প্ল্যান তুলনা, এবং কোন মডেল কখন ব্যবহার করবেন।</p></div>
+      <div class="chap-card"><div class="chap-num">০৪ — ০৫</div><h3>প্রম্পটিং এর আর্ট</h3><p>স্পষ্ট নির্দেশনা, উদাহরণ-ভিত্তিক প্রম্পট, XML ট্যাগ, আর Projects/Memory মাস্টারি।</p></div>
+      <div class="chap-card"><div class="chap-num">০৬ — ০৭</div><h3>ডকুমেন্ট ও প্রেজেন্টেশন</h3><p>৪-ধাপের রিপোর্ট-লেখার পদ্ধতি, PowerPoint, আর এক্সেল থেকে লাইভ ড্যাশবোর্ড।</p></div>
+      <div class="chap-card"><div class="chap-num">০৮ — ০৯</div><h3>বিশ্লেষণ ও গবেষণা</h3><p>২০০+ পেইজ ডকুমেন্ট পেজ-রেফারেন্স সহ বিশ্লেষণ, আর Deep Research দিয়ে পূর্ণাঙ্গ রিপোর্ট।</p></div>
+      <div class="chap-card"><div class="chap-num">১০ — ১১</div><h3>Artifacts ও Skills</h3><p>কোডিং না জেনে অ্যাপ বানানো, আর রিপিটেটিভ কাজ চিরতরে অটোমেট করা।</p></div>
+      <div class="chap-card"><div class="chap-num">১২ — ১৫</div><h3>পার্সোনাল AI এজেন্ট</h3><p>Connectors, Cowork, পেশাভিত্তিক সিস্টেম, নিরাপত্তা, আর ৩০ দিনের প্র্যাকটিস প্ল্যান।</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FEATURES (capability highlight) ============ -->
+<section id="capabilities">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">সবচেয়ে বেশি কাজে লাগবে যেগুলো</span>
+      <h2>প্রতিটা অধ্যায়ে একটা "এখনই ট্রাই করো" সেকশন</h2>
+      <p>পড়ে যাওয়া আর করে দেখা — এই দুটোর মধ্যে আকাশ-পাতাল পার্থক্য। তাই প্রতিটা অধ্যায়ের শেষে সরাসরি প্র্যাকটিসের জন্য রেডি প্রম্পট দেওয়া আছে।</p>
+    </div>
+    <div class="features-grid reveal">
+      <div class="feat-card">
+        <div class="feat-icon c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v18l-4-2-4 2-4-2-4 2Z"/><path d="M8 7h8M8 11h8"/></svg></div>
+        <h3>ডকুমেন্ট মাস্টারি</h3>
+        <p>রিপোর্ট, প্রপোজাল, ইবুক — সবকিছুর জন্য ৪-ধাপের পদ্ধতি, সরাসরি Word ফাইল আউটপুট সহ।</p>
+        <div class="feat-q">"আউটলাইন দাও, একটা একটা সেকশন লিখি..."</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+        <h3>ডেটা থেকে ড্যাশবোর্ড</h3>
+        <p>অগোছালো এক্সেল ফাইল থেকে লাইভ, ইন্টারঅ্যাকটিভ ভিজুয়ালাইজেশন — কোনো কোডিং ছাড়াই।</p>
+        <div class="feat-q">"এই বিক্রির ডেটা থেকে ড্যাশবোর্ড বানাও..."</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon c-gold"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
+        <h3>Deep Research</h3>
+        <p>একটা টপিক দিন, সোর্স-সহ পূর্ণাঙ্গ রিপোর্ট পান — গবেষণা বিশ্লেষকের কয়েক দিনের কাজ কয়েক মিনিটে।</p>
+        <div class="feat-q">"বাংলাদেশের ফ্রিল্যান্স মার্কেট নিয়ে রিপোর্ট..."</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon c-indigo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M3 9h18M9 4v14"/></svg></div>
+        <h3>Artifacts দিয়ে অ্যাপ</h3>
+        <p>ক্যালকুলেটর, কুইজ, ট্র্যাকার — কথা বলে কাজ-করা টুল বানান, কোনো প্রোগ্রামিং জ্ঞান লাগবে না।</p>
+        <div class="feat-q">"আমার জন্য একটা ট্যাক্স ক্যালকুলেটর বানাও..."</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon c-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+        <h3>Skills দিয়ে অটোমেশন</h3>
+        <p>একবার বানান, বারবার কাজে লাগান — রিপিটেটিভ রিপোর্ট ফরম্যাট, ইনভয়েস, ব্র্যান্ড ভয়েস সব মনে রাখবে Claude।</p>
+        <div class="feat-q">"এই প্রক্রিয়াটা শিখে রাখো..."</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon c-teal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 4v-3.5c0-1 .1-1.4-.5-2 2-.2 4.5-1 4.5-5.5 0-1.3-.2-2.3-.7-3.2.1-.5.5-2-.1-3.5 0 0-1.5-.5-3.5 1.3a12 12 0 0 0-6.4 0c-2-1.8-3.5-1.3-3.5-1.3-.6 1.5-.2 3-.1 3.5-.5.9-.7 1.9-.7 3.2 0 4.5 2.5 5.3 4.5 5.5-.6.6-.6 1.2-.5 2V21"/></svg></div>
+        <h3>Connectors ও Cowork</h3>
+        <p>Gmail, Calendar, Drive-এর সাথে সংযুক্ত করে Claude-কে নিজের পার্সোনাল ডিজিটাল এজেন্ট বানান।</p>
+        <div class="feat-q">"আমার ইনবক্সে কোন মেসেজ রিপ্লাই বাকি..."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO IT'S FOR ============ -->
+<section class="who" id="who">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">এই বই কাদের জন্য</span>
+      <h2>আপনার পেশা যা-ই হোক, একটা সিস্টেম আছে</h2>
+    </div>
+    <div class="who-grid reveal">
+      <div class="who-card"><div class="emoji">💼</div><h4>চাকরিজীবী</h4><p>রিপোর্ট, প্রপোজাল, মিটিং নোট</p></div>
+      <div class="who-card"><div class="emoji">🚀</div><h4>উদ্যোক্তা</h4><p>বিজনেস প্ল্যান, কনটেন্ট, অটোমেশন</p></div>
+      <div class="who-card"><div class="emoji">🎨</div><h4>ফ্রিল্যান্সার</h4><p>প্রতিটা ক্লায়েন্টের জন্য আলাদা সিস্টেম</p></div>
+      <div class="who-card"><div class="emoji">🎓</div><h4>ছাত্র ও গবেষক</h4><p>থিসিস, অ্যাসাইনমেন্ট, লিটারেচার রিভিউ</p></div>
+      <div class="who-card"><div class="emoji">📚</div><h4>শিক্ষক ও ক্রিয়েটর</h4><p>পাঠ পরিকল্পনা, কুইজ, কনটেন্ট</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TOC PREVIEW ============ -->
+<section id="sample">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">এক নজরে</span>
+      <h2>সূচিপত্রের একটা অংশ</h2>
+      <p>সম্পূর্ণ ১৫টা অধ্যায় ও ৩টা পরিশিষ্ট ডাউনলোড করার পর পাবেন। নিচে কিছু গুরুত্বপূর্ণ অধ্যায়ের তালিকা।</p>
+    </div>
+    <div class="toc-list reveal">
+      <div class="toc-row"><span class="n">০১</span><span class="t">AI ল্যান্ডস্কেপ — Claude কোথায় দাঁড়িয়ে</span><span class="tag">তুলনা</span></div>
+      <div class="toc-row"><span class="n">০৪</span><span class="t">প্রম্পটিং এর আসল আর্ট</span><span class="tag">মূল ভিত্তি</span></div>
+      <div class="toc-row"><span class="n">০৬</span><span class="t">ডকুমেন্ট ও রিপোর্ট — ৪ ধাপের পদ্ধতি</span><span class="tag">হাতে-কলমে</span></div>
+      <div class="toc-row"><span class="n">০৯</span><span class="t">Deep Research — গবেষণা মিনিটে</span><span class="tag">জনপ্রিয়</span></div>
+      <div class="toc-row"><span class="n">১১</span><span class="t">Claude Skills — অটোমেশন</span><span class="tag">অ্যাডভান্সড</span></div>
+      <div class="toc-row"><span class="n">১৩</span><span class="t">পেশা অনুযায়ী পার্সোনাল Claude সিস্টেম</span><span class="tag">প্র্যাকটিক্যাল</span></div>
+      <div class="toc-row"><span class="n">১৫</span><span class="t">৩০ দিনের প্র্যাকটিস প্ল্যান</span><span class="tag">অ্যাকশন প্ল্যান</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DOWNLOAD CTA ============ -->
+<section class="download" id="download">
+  <div class="wrap dl-box">
+    <div class="reveal">
+      <span class="eyebrow" style="color:var(--gold)">সম্পূর্ণ ফ্রি</span>
+      <h2 style="margin-top:14px;">বইটা ডাউনলোড করুন, আজই শুরু করুন</h2>
+      <div class="section-head" style="margin-top:14px; margin-bottom:0;">
+        <p>কোনো সাইনআপ, ইমেইল, বা ফর্ম পূরণ করার প্রয়োজন নেই। নিচের বাটনে ক্লিক করুন — সরাসরি .docx ফাইল ডাউনলোড হয়ে যাবে।</p>
+      </div>
+      <div class="dl-points">
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M20 6L9 17l-5-5"/></svg> ৫৩ পাতা, ১৫ অধ্যায়, সম্পূর্ণ বাংলায়</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M20 6L9 17l-5-5"/></svg> Word, Google Docs, মোবাইলে খোলে</div>
+        <div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M20 6L9 17l-5-5"/></svg> রেডি প্রম্পট লাইব্রেরি ও লিংক ডিরেক্টরি সহ</div>
+      </div>
+    </div>
+
+    <div class="dl-card reveal">
+      <div class="dl-file">
+        <div class="ficon">📘</div>
+        <div>
+          <div class="fname">claude-mastery-bangla.docx</div>
+          <div class="fsize">Microsoft Word Document · ~৬৫ KB</div>
+        </div>
+      </div>
+      <a class="btn btn-primary btn-download" id="downloadBtn"
+         href="https://raw.githubusercontent.com/economist-bd/Claude_Masterclass_eBook-/main/claude-mastery-bangla.docx"
+         download="ক্লড-মাস্টারি-বাংলাদেশের-গাইড.docx">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 11l5 5 5-5"/><path d="M4 21h16"/></svg>
+        বইটি ডাউনলোড করুন (.docx)
+      </a>
+      <p class="dl-note">সম্পূর্ণ ফ্রি · কোনো ইমেইল লাগবে না · সরাসরি ডাউনলোড শুরু হবে</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW TO OPEN ============ -->
+<section id="howto">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">ফাইল খুলতে সমস্যা হচ্ছে?</span>
+      <h2>মোবাইলে বা যেকোনো ডিভাইসে খোলার উপায়</h2>
+    </div>
+    <div class="howto-grid reveal">
+      <div class="howto-card">
+        <div class="howto-step">১</div>
+        <h4>মোবাইলে (Android/iPhone)</h4>
+        <p>Google Docs বা Microsoft Word অ্যাপ ইনস্টল থাকলে ডাউনলোড হওয়া ফাইলে ট্যাপ করলেই সরাসরি খুলে যাবে।</p>
+      </div>
+      <div class="howto-card">
+        <div class="howto-step">২</div>
+        <h4>কম্পিউটারে (Windows/Mac)</h4>
+        <p>MS Word থাকলে ডাবল-ক্লিকে খুলুন। না থাকলে ফ্রি LibreOffice দিয়েও সম্পূর্ণভাবে পড়া যাবে।</p>
+      </div>
+      <div class="howto-card">
+        <div class="howto-step">৩</div>
+        <h4>Word/Office ছাড়াই পড়তে চাইলে</h4>
+        <p>ফাইলটা Google Drive-এ আপলোড করে Google Docs দিয়ে ব্রাউজারেই সরাসরি খুলে পড়তে পারবেন, বিনামূল্যে।</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap" style="max-width:880px;">
+    <div class="section-head reveal">
+      <span class="eyebrow">প্রায়শই জিজ্ঞাসিত প্রশ্ন</span>
+      <h2>আরও কিছু জানার থাকলে</h2>
+    </div>
+    <div class="reveal">
+      <div class="faq-item open">
+        <button class="faq-q" aria-expanded="true">
+          <span class="qtext">বইটা পড়তে Claude-এর পেইড অ্যাকাউন্ট লাগবে কি?</span>
+          <span class="plus"></span>
+        </button>
+        <div class="faq-a"><p>না। বইটা সম্পূর্ণ ফ্রি, এবং বইয়ের ভেতরের অনেক ফিচার (চ্যাট, ওয়েব সার্চ, ফাইল তৈরি) Claude-এর ফ্রি প্ল্যানেই কাজ করে। কিছু অ্যাডভান্সড ফিচার (Research, Cowork) Pro প্ল্যানে লাগে, যা বইয়ে স্পষ্টভাবে আলাদা করে বলা আছে।</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="qtext">আমি প্রোগ্রামিং জানি না, এই বই কি আমার জন্য?</span>
+          <span class="plus"></span>
+        </button>
+        <div class="faq-a"><p>হ্যাঁ, একদম। বইটা বিশেষভাবে এমনভাবে লেখা যাতে কোনো টেকনিক্যাল ব্যাকগ্রাউন্ড ছাড়াই প্রতিটা ধাপ অনুসরণ করা যায় — সহজ বাংলা ভাষায়, প্রতিটা ফিচারের জন্য ধাপে ধাপে নির্দেশনা সহ।</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="qtext">ফাইলটা ডাউনলোড না হলে কী করব?</span>
+          <span class="plus"></span>
+        </button>
+        <div class="faq-a"><p>ব্রাউজার কখনো কখনো সরাসরি ডাউনলোডের বদলে ফাইলটা নতুন ট্যাবে খুলে ফেলতে পারে — এটা স্বাভাবিক। সেক্ষেত্রে নতুন ট্যাবে থ্রি-ডট মেনু থেকে "Download" চাপুন। সমস্যা থাকলে ব্রাউজার বদলে (Chrome) আবার চেষ্টা করুন।</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span class="qtext">বইটা কি আবার ফ্রিতে শেয়ার করা যাবে?</span>
+          <span class="plus"></span>
+        </button>
+        <div class="faq-a"><p>হ্যাঁ, বইটা শিক্ষামূলক উদ্দেশ্যে তৈরি — সহপাঠী, বন্ধু, বা সহকর্মীদের সাথে অবাধে শেয়ার করতে পারবেন।</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="brand-mark">ক্ল</span> ক্লড মাস্টারি
+      </div>
+      <div class="foot-links">
+        <a href="#whats-inside">বইয়ের ভেতরে</a>
+        <a href="#who">কাদের জন্য</a>
+        <a href="#sample">সূচিপত্র</a>
+        <a href="#faq">প্রশ্নোত্তর</a>
+        <a href="#download">ডাউনলোড</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© ২০২৬ ক্লড মাস্টারি — বাংলাদেশের জন্য সম্পূর্ণ গাইড</span>
+      <span>শিক্ষামূলক উদ্দেশ্যে তৈরি · স্বাধীনভাবে প্রকাশিত</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile nav toggle
+const burger = document.getElementById('burger');
+const topnav = document.getElementById('topnav');
+burger.addEventListener('click', () => {
+  const isOpen = topnav.classList.toggle('open');
+  burger.setAttribute('aria-expanded', isOpen);
+});
+topnav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  topnav.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+}));
+
+// FAQ accordion
+document.querySelectorAll('.faq-item').forEach(item => {
+  const q = item.querySelector('.faq-q');
+  const a = item.querySelector('.faq-a');
+  if(item.classList.contains('open')){ a.style.maxHeight = a.scrollHeight + 'px'; }
+  q.addEventListener('click', () => {
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(other => {
+      if(other !== item){
+        other.classList.remove('open');
+        other.querySelector('.faq-q').setAttribute('aria-expanded','false');
+        other.querySelector('.faq-a').style.maxHeight = null;
+      }
+    });
+    item.classList.toggle('open', !isOpen);
+    q.setAttribute('aria-expanded', String(!isOpen));
+    a.style.maxHeight = !isOpen ? a.scrollHeight + 'px' : null;
+  });
+});
+
+// Scroll reveal
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+}, { threshold: 0.12 });
+revealEls.forEach(el => io.observe(el));
+
+// Restart hero chat animation periodically for visitors who stay on page
+const bubbles = document.querySelectorAll('.chat-card .bubble');
+function replay(){
+  bubbles.forEach(b => { b.style.animation = 'none'; });
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => { bubbles.forEach(b => { b.style.animation = ''; }); });
+  });
+}
+setInterval(replay, 9000);
+</script>
+</body>
+</html>
